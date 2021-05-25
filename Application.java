@@ -1,3 +1,6 @@
+import java.util.*;
+import java.io.*;
+
 public class Application{
 
 
@@ -118,18 +121,21 @@ public class Application{
   "Roses are red, violets are blue. If you are kind, you’ll let me through.",
   "If you let me in, I’ll give you a cookie."};
   //TOTAL COUNT: 30
-;
+
+
   String[] errorList = {"gpa", "sat", "IM", "EC", "statement"};
 
 
+  public Application(){
+    statement = Statements[(int)(Math.random()*30)];
+    
+  }
+
 
   public static void main(String[] args){
-  /*  Application app = new Application();
+    Application app = new Application();
 
-    System.out.println(app.extraCurriculars[0].length);
-    System.out.println(app.extraCurriculars[1].length);
-    System.out.println(app.extraCurriculars[2].length);
-    */
+    System.out.println(app.statement);
   }
 
 

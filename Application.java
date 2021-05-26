@@ -130,13 +130,51 @@ public class Application{
     statement = Statements[(int)(Math.random()*30)];
     college = (int)(Math.random()*3);
 
+    Standards stand = new Standards();
+    double minGPA = stand.getReqGPA();
+    int minSAT = stand.getReqSAT();
+
+    System.out.println(stand.getMood());
+    System.out.println(minGPA);
+    System.out.println(minSAT);
+
+
+    if (college > 0){
+      gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10) / 10.0;
+      sat = ((int)(Math.random()*(1600 - minSAT)) + minSAT) /10 *10;
+    }else{
+      gpa = Math.round(Math.random()*minGPA*10) / 10.0;
+      sat = (int)(Math.random()*minSAT) /10 *10;
+    }
+
   }
 
 
   public static void main(String[] args){
     Application app = new Application();
 
+    System.out.println("NEW APPLICATION");
+
+    System.out.println();
+
+    System.out.println("COLLEGE");
+
     System.out.println(app.college);
+    if (app.college == 1){
+      System.out.println("Harvard");
+    }else if(app.college == 2){
+      System.out.println("MIT");
+    }else if(app.college == 0){
+      System.out.println("Greendale");
+    }else{
+      System.out.println("Uh oh there's a problem");
+    }
+
+    System.out.println();
+    System.out.println("INFO");
+    System.out.println("Personal Statement: " + app.statement);
+    System.out.println("GPA: " + app.gpa);
+    System.out.println("SAT: " + app.sat);
   }
 
 

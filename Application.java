@@ -134,20 +134,18 @@ public class Application{
     double minGPA = stand.getReqGPA();
     int minSAT = stand.getReqSAT();
 
-//HARVARD AND MIT
+    //default good sat and GPA
+    gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10) / 10.0;
+    sat = ((int)(Math.random()*(1600 - minSAT)) + minSAT) /10 *10;
 
-    if (college > 0){
-      gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10) / 10.0;
-      sat = ((int)(Math.random()*(1600 - minSAT)) + minSAT) /10 *10;
 
+    if (college == 2){
       //MIT
-      if (college == 2){
-        intendedMajor = intendedMajors[2][(int)(Math.random()*15)];
+      intendedMajor = intendedMajors[2][(int)(Math.random()*15)];
 
-      }else if(college == 1){
-        //harvard
-        intendedMajor = intendedMajors[1][(int)(Math.random()*25)];
-      }
+    }else if(college == 1){
+      //harvard
+      intendedMajor = intendedMajors[1][(int)(Math.random()*25)];
 
     }else{
       //greendale
@@ -158,6 +156,7 @@ public class Application{
       sat = ((int)(Math.random()*(1600 - minSAT)) + minSAT) /10 *10;
 
       int rand = (int)(Math.random()*2)+1;
+
       if (rand == 1){
         intendedMajor = intendedMajors[rand][(int)(Math.random()*25)];
       }else{
@@ -166,8 +165,6 @@ public class Application{
 
       //need to do EC list
 
-
-//String[] errorList = {"gpa", "sat", "IM", "EC", "statement"};
 
       if (error.equals("gpa")){
         //error

@@ -186,6 +186,8 @@ public class Application{
 
       }else if (error.equals("EC")){
 
+        int random = (int)(Math.random()*3);
+        ECs[random] = extraCurriculars[0][(int)(Math.random()*50)];
 
       }else{
         //error is statement

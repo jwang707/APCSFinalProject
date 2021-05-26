@@ -173,7 +173,7 @@ public class Application{
 
 
       if (error.equals("gpa")){
-        //error
+
         gpa = Math.round(Math.random()*minGPA*10) / 10.0;
 
       }else if (error.equals("sat")){
@@ -189,8 +189,25 @@ public class Application{
         int random = (int)(Math.random()*3);
         ECs[random] = extraCurriculars[0][(int)(Math.random()*50)];
 
-      }else{
-        //error is statement
+      }else{    //error is statement
+
+        String str = "";
+        int randCharFirst = (int)(Math.random()*5);
+        int randCharSecond = (int)(Math.random()*(statement.length()-6))+5;
+        str+=statement.substring(0, randCharFirst);
+
+        char firstMistake = statement.charAt(randCharFirst);
+        firstMistake ++;
+        str += firstMistake;
+
+        str += statement.substring(randCharFirst+1, randCharSecond);
+
+        char secondMistake = statement.charAt(randCharSecond);
+        secondMistake ++;
+        str += secondMistake;
+        str += statement.substring(randCharSecond+1);
+
+        statement = str;
 
       }
 
@@ -201,6 +218,7 @@ public class Application{
 
   public static void main(String[] args){
     Application app = new Application();
+
 
   /*  System.out.println("NEW APPLICATION");
 

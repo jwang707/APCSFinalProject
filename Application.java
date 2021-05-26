@@ -128,14 +128,15 @@ public class Application{
 
   public Application(){
     statement = Statements[(int)(Math.random()*30)];
-    
+    college = (int)(Math.random()*3);
+
   }
 
 
   public static void main(String[] args){
     Application app = new Application();
 
-    System.out.println(app.statement);
+    System.out.println(app.college);
   }
 
 

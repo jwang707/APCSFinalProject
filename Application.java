@@ -134,18 +134,38 @@ public class Application{
     double minGPA = stand.getReqGPA();
     int minSAT = stand.getReqSAT();
 
-    System.out.println(stand.getMood());
-    System.out.println(minGPA);
-    System.out.println(minSAT);
-
+//HARVARD AND MIT
 
     if (college > 0){
       gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10) / 10.0;
       sat = ((int)(Math.random()*(1600 - minSAT)) + minSAT) /10 *10;
-    }else{
+
+      //MIT
+      if (college == 2){
+        intendedMajor = intendedMajors[2][(int)(Math.random()*15)];
+
+      }else if(college == 1){
+        //harvard
+        intendedMajor = intendedMajors[1][(int)(Math.random()*25)];
+      }
+
+    }/*else{
+      //greendale
+      String error = errorList[(int)(Math.random()*5)];
+
+      if ()
+
+    }*/
+
+
+
+
+    //else{
+      /*
       gpa = Math.round(Math.random()*minGPA*10) / 10.0;
       sat = (int)(Math.random()*minSAT) /10 *10;
-    }
+      */
+  //  }
 
   }
 
@@ -153,7 +173,7 @@ public class Application{
   public static void main(String[] args){
     Application app = new Application();
 
-    System.out.println("NEW APPLICATION");
+  /*  System.out.println("NEW APPLICATION");
 
     System.out.println();
 
@@ -175,6 +195,8 @@ public class Application{
     System.out.println("Personal Statement: " + app.statement);
     System.out.println("GPA: " + app.gpa);
     System.out.println("SAT: " + app.sat);
+
+    */
   }
 
 

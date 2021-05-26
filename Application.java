@@ -153,74 +153,40 @@ public class Application{
       //greendale
       String error = errorList[(int)(Math.random()*5)];
 
+      //generic good application stuff that will change in the "errors"
+      gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10) / 10.0;
+      sat = ((int)(Math.random()*(1600 - minSAT)) + minSAT) /10 *10;
+
+      int rand = (int)(Math.random()*2)+1;
+      if (rand == 1){
+        intendedMajor = intendedMajors[rand][(int)(Math.random()*25)];
+      }else{
+        intendedMajor = intendedMajors[rand][(int)(Math.random()*15)];
+      }
+
+      //need to do EC list
+
+
 //String[] errorList = {"gpa", "sat", "IM", "EC", "statement"};
 
       if (error.equals("gpa")){
         //error
         gpa = Math.round(Math.random()*minGPA*10) / 10.0;
 
-        //everything else good
-        sat = ((int)(Math.random()*(1600 - minSAT)) + minSAT) /10 *10;
-
-        int rand = (int)(Math.random()*2)+1;
-        if (rand == 1){
-          intendedMajor = intendedMajors[rand][(int)(Math.random()*25)];
-        }else{
-          intendedMajor = intendedMajors[rand][(int)(Math.random()*15)];
-        }
-        //use rand for ecs as well
-
       }else if (error.equals("sat")){
-        //error
+
         sat = (int)(Math.random()*minSAT) /10 *10;
 
-        //everything else good
-        gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10) / 10.0;
-
-        int rand = (int)(Math.random()*2)+1;
-        if (rand == 1){
-          intendedMajor = intendedMajors[rand][(int)(Math.random()*25)];
-        }else{
-          intendedMajor = intendedMajors[rand][(int)(Math.random()*15)];
-        }
-
-
-
       }else if (error.equals("IM")){
-        //error
-        intendedMajor = intendedMajors[0][(int)(Math.random()*20)];
 
-        //everything else good
-        gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10) / 10.0;
-        sat = ((int)(Math.random()*(1600 - minSAT)) + minSAT) /10 *10;
+        intendedMajor = intendedMajors[0][(int)(Math.random()*20)];
 
       }else if (error.equals("EC")){
 
-        //everything else good
-        gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10) / 10.0;
-        sat = ((int)(Math.random()*(1600 - minSAT)) + minSAT) /10 *10;
-
-        int rand = (int)(Math.random()*2)+1;
-        if (rand == 1){
-          intendedMajor = intendedMajors[rand][(int)(Math.random()*25)];
-        }else{
-          intendedMajor = intendedMajors[rand][(int)(Math.random()*15)];
-        }
 
       }else{
         //error is statement
 
-
-        //everything else good
-        gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10) / 10.0;
-        sat = ((int)(Math.random()*(1600 - minSAT)) + minSAT) /10 *10;
-
-        int rand = (int)(Math.random()*2)+1;
-        if (rand == 1){
-          intendedMajor = intendedMajors[rand][(int)(Math.random()*25)];
-        }else{
-          intendedMajor = intendedMajors[rand][(int)(Math.random()*15)];
-        }
       }
 
     }

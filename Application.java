@@ -5,11 +5,12 @@ public class Application{
 
 
 //Application Variables
-  private String studentName, intendedMajor, statement;
+  private String intendedMajor, statement;
   private double gpa;
   private int sat;
   private String[] ECs;
   private int college;
+  private String error;
 
 //Word Banks
   //index of arrays: 0 = greendale, 1 = harvard, 2 = mit
@@ -129,6 +130,7 @@ public class Application{
   public Application(){
     statement = Statements[(int)(Math.random()*30)];
     college = (int)(Math.random()*3);
+    error = "none";
 
     Standards stand = new Standards();
     double minGPA = stand.getReqGPA();
@@ -149,7 +151,7 @@ public class Application{
 
     }else{
       //greendale
-      String error = errorList[(int)(Math.random()*5)];
+      error = errorList[(int)(Math.random()*5)];
 
       //generic good application stuff that will change in the "errors"
       //gpa and sat are already set
@@ -215,6 +217,47 @@ public class Application{
 
   }
 
+  public String getMajor(){
+    return intendedMajor;
+  }
+
+  public double getGPA(){
+    return gpa;
+  }
+
+  public String getStatement(){
+    return statement;
+
+  }
+
+  public int getSAT(){
+    return sat;
+  }
+
+  public String[] getECs(){
+    return ECs;
+  }
+
+  public int getCollege(){
+    return college;
+  }
+
+  public String getError(){
+    return error;
+  }
+
+  public String getECsString(){
+    String str = "";
+
+    for (int i = 0; i<3; i++){
+      str+=i+1;
+      str+=". ";
+      str+=ECs[i];
+      str+="\n";
+    }
+
+    return str;
+  }
 
   public static void main(String[] args){
     Application app = new Application();

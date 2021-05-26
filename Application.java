@@ -162,7 +162,14 @@ public class Application{
         intendedMajor = intendedMajors[rand][(int)(Math.random()*15)];
       }
 
-      //need to do EC list
+      int first = (int)(Math.random()*20); //within index 0-19 for extracurriculars
+      int second = (int)(Math.random()*15) + 20; //from index 20 - 34 for extracurriculars
+      int third = (int)(Math.random()*15) + 35; //from index 35 - 49 for extracurriculars
+
+      ECs = new String[3];
+      ECs[0] = extraCurriculars[rand][first];
+      ECs[1] = extraCurriculars[rand][second];
+      ECs[2] = extraCurriculars[rand][third];
 
 
       if (error.equals("gpa")){

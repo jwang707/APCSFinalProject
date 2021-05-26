@@ -262,14 +262,21 @@ public class Application{
   public static void main(String[] args){
     Application app = new Application();
 
-
-  /*  System.out.println("NEW APPLICATION");
+    System.out.println();
+    System.out.println("NEW APPLICATION");
 
     System.out.println();
+    System.out.println();
+    System.out.println("-----------------STANDARDS-----------------");
 
-    System.out.println("COLLEGE");
+    //tbc
+    System.out.println();
 
-    System.out.println(app.college);
+    System.out.println("-----------------COLLEGE-----------------");
+    System.out.println();
+
+    System.out.println("integer: " + app.college);
+
     if (app.college == 1){
       System.out.println("Harvard");
     }else if(app.college == 2){
@@ -281,12 +288,22 @@ public class Application{
     }
 
     System.out.println();
-    System.out.println("INFO");
-    System.out.println("Personal Statement: " + app.statement);
+    System.out.println("-----------------INFO-----------------");
+    System.out.println();
     System.out.println("GPA: " + app.gpa);
     System.out.println("SAT: " + app.sat);
+    System.out.println();
+    System.out.println("INTENDED MAJOR: " + app.intendedMajor);
+    System.out.println();
+    System.out.println("EXTRACURRICULARS:");
+    System.out.println(app.getECsString());
+    System.out.println();
+    System.out.println("PERSONAL STATEMENT: " + app.statement);
 
-    */
+    System.out.println();
+    System.out.println("-----------------ERROR-----------------");
+    System.out.println();
+    System.out.println("ERROR: " + app.error);
   }
 
 

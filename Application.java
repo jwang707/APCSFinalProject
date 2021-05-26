@@ -1,3 +1,6 @@
+import java.util.*;
+import java.io.*;
+
 public class Application{
 
 
@@ -118,17 +121,101 @@ public class Application{
   "Roses are red, violets are blue. If you are kind, you’ll let me through.",
   "If you let me in, I’ll give you a cookie."};
   //TOTAL COUNT: 30
-;
+
+
   String[] errorList = {"gpa", "sat", "IM", "EC", "statement"};
 
 
+  public Application(){
+    statement = Statements[(int)(Math.random()*30)];
+    college = (int)(Math.random()*3);
+
+    Standards stand = new Standards();
+    double minGPA = stand.getReqGPA();
+    int minSAT = stand.getReqSAT();
+
+    //default good sat and GPA
+    gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10) / 10.0;
+    sat = ((int)(Math.random()*(1600 - minSAT)) + minSAT) /10 *10;
+
+
+    if (college == 2){
+      //MIT
+      intendedMajor = intendedMajors[2][(int)(Math.random()*15)];
+
+    }else if(college == 1){
+      //harvard
+      intendedMajor = intendedMajors[1][(int)(Math.random()*25)];
+
+    }else{
+      //greendale
+      String error = errorList[(int)(Math.random()*5)];
+
+      //generic good application stuff that will change in the "errors"
+      //gpa and sat are already set
+
+      int rand = (int)(Math.random()*2)+1;
+
+      if (rand == 1){
+        intendedMajor = intendedMajors[rand][(int)(Math.random()*25)];
+      }else{
+        intendedMajor = intendedMajors[rand][(int)(Math.random()*15)];
+      }
+
+      //need to do EC list
+
+
+      if (error.equals("gpa")){
+        //error
+        gpa = Math.round(Math.random()*minGPA*10) / 10.0;
+
+      }else if (error.equals("sat")){
+
+        sat = (int)(Math.random()*minSAT) /10 *10;
+
+      }else if (error.equals("IM")){
+
+        intendedMajor = intendedMajors[0][(int)(Math.random()*20)];
+
+      }else if (error.equals("EC")){
+
+
+      }else{
+        //error is statement
+
+      }
+
+    }
+
+  }
+
 
   public static void main(String[] args){
-  /*  Application app = new Application();
+    Application app = new Application();
 
-    System.out.println(app.extraCurriculars[0].length);
-    System.out.println(app.extraCurriculars[1].length);
-    System.out.println(app.extraCurriculars[2].length);
+  /*  System.out.println("NEW APPLICATION");
+
+    System.out.println();
+
+    System.out.println("COLLEGE");
+
+    System.out.println(app.college);
+    if (app.college == 1){
+      System.out.println("Harvard");
+    }else if(app.college == 2){
+      System.out.println("MIT");
+    }else if(app.college == 0){
+      System.out.println("Greendale");
+    }else{
+      System.out.println("Uh oh there's a problem");
+    }
+
+    System.out.println();
+    System.out.println("INFO");
+    System.out.println("Personal Statement: " + app.statement);
+    System.out.println("GPA: " + app.gpa);
+    System.out.println("SAT: " + app.sat);
+
     */
   }
 

@@ -7,7 +7,8 @@ public class Standards{
     reqSAT = 1550;
 
 
-    int currMood = (int) (Math.random()*3)-1; // random -1, 0, or 1
+    currMood = (int) (Math.random()*3)-1; // random -1, 0, or 1
+
 
     if (currMood == -1){
       reqGPA += 2;
@@ -20,6 +21,7 @@ public class Standards{
   }
 
   public double getReqGPA(){
+  //  System.out.println(currMood);
     return reqGPA;
   }
 
@@ -30,5 +32,6 @@ public class Standards{
   public int getMood(){
     return currMood;
   }
+
 
 }

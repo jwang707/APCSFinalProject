@@ -152,8 +152,7 @@ public class Application{
       String error = errorList[(int)(Math.random()*5)];
 
       //generic good application stuff that will change in the "errors"
-      gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10) / 10.0;
-      sat = ((int)(Math.random()*(1600 - minSAT)) + minSAT) /10 *10;
+      //gpa and sat are already set
 
       int rand = (int)(Math.random()*2)+1;
 

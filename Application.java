@@ -11,6 +11,7 @@ public class Application{
   private String[] ECs = new String[3];
   private int college;
   private String error;
+  private Standards stand = new Standards();
 
 //Word Banks
   //index of arrays: 0 = greendale, 1 = harvard, 2 = mit
@@ -132,7 +133,7 @@ public class Application{
     college = (int)(Math.random()*3);
     error = "none";
 
-    Standards stand = new Standards();
+  //  Standards stand = new Standards();
     double minGPA = stand.getReqGPA();
     int minSAT = stand.getReqSAT();
 
@@ -261,6 +262,10 @@ public class Application{
     return error;
   }
 
+  public Standards getStand(){
+    return stand;
+  }
+
   public String getECsString(){
     String str = "";
 
@@ -268,14 +273,16 @@ public class Application{
       str+=i+1;
       str+=". ";
       str+=ECs[i];
-      str+="\n";
+      if (i < 2){
+        str+="\n";
+      }
     }
 
     return str;
   }
 
   public static void main(String[] args){
-    Application app = new Application();
+  /*  Application app = new Application();
 
     System.out.println();
     System.out.println("NEW APPLICATION");
@@ -283,6 +290,10 @@ public class Application{
     System.out.println();
     System.out.println();
     System.out.println("-----------------STANDARDS-----------------");
+    System.out.println();
+    System.out.println("CURRENT MOOD: " + app.getStand().getMood());
+    System.out.println("REQ GPA: " + app.getStand().getReqGPA());
+    System.out.println("REQ SAT: " + app.getStand().getReqSAT());
 
     //tbc
     System.out.println();
@@ -312,7 +323,7 @@ public class Application{
     System.out.println();
     System.out.println("EXTRACURRICULARS:");
     System.out.println(app.getECsString());
-    //System.out.println();
+    System.out.println();
     System.out.println("PERSONAL STATEMENT: " + app.statement);
 
     System.out.println();
@@ -320,6 +331,7 @@ public class Application{
     System.out.println();
     System.out.println("ERROR: " + app.error);
     System.out.println();
+    */
   }
 
 

@@ -8,7 +8,7 @@ public class Application{
   private String intendedMajor, statement;
   private double gpa;
   private int sat;
-  private String[] ECs;
+  private String[] ECs = new String[3];
   private int college;
   private String error;
 
@@ -145,9 +145,25 @@ public class Application{
       //MIT
       intendedMajor = intendedMajors[2][(int)(Math.random()*15)];
 
+      int first = (int)(Math.random()*20); //within index 0-19 for extracurriculars
+      int second = (int)(Math.random()*15) + 20; //from index 20 - 34 for extracurriculars
+      int third = (int)(Math.random()*15) + 35; //from index 35 - 49 for extracurriculars
+
+      ECs[0] = extraCurriculars[2][first];
+      ECs[1] = extraCurriculars[2][second];
+      ECs[2] = extraCurriculars[2][third];
+
     }else if(college == 1){
       //harvard
       intendedMajor = intendedMajors[1][(int)(Math.random()*25)];
+
+      int first = (int)(Math.random()*20); //within index 0-19 for extracurriculars
+      int second = (int)(Math.random()*15) + 20; //from index 20 - 34 for extracurriculars
+      int third = (int)(Math.random()*15) + 35; //from index 35 - 49 for extracurriculars
+
+      ECs[0] = extraCurriculars[1][first];
+      ECs[1] = extraCurriculars[1][second];
+      ECs[2] = extraCurriculars[1][third];
 
     }else{
       //greendale
@@ -168,7 +184,6 @@ public class Application{
       int second = (int)(Math.random()*15) + 20; //from index 20 - 34 for extracurriculars
       int third = (int)(Math.random()*15) + 35; //from index 35 - 49 for extracurriculars
 
-      ECs = new String[3];
       ECs[0] = extraCurriculars[rand][first];
       ECs[1] = extraCurriculars[rand][second];
       ECs[2] = extraCurriculars[rand][third];
@@ -297,13 +312,14 @@ public class Application{
     System.out.println();
     System.out.println("EXTRACURRICULARS:");
     System.out.println(app.getECsString());
-    System.out.println();
+    //System.out.println();
     System.out.println("PERSONAL STATEMENT: " + app.statement);
 
     System.out.println();
     System.out.println("-----------------ERROR-----------------");
     System.out.println();
     System.out.println("ERROR: " + app.error);
+    System.out.println();
   }
 
 

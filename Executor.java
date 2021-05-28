@@ -16,7 +16,7 @@ public class Executor{
     disads = 0;
     numApps = 7; //number of apps in one day
     numDay = 1;
-    errorThreshold = 3; //number of errors allowed in a given day. for future days, it should be set to numApps - dailyBenchmark
+    errorThreshold = 3; //number of errors for one disadulation. threshold of 3 = 2 errors allowed. 3rd one is a disad.
   }
 
   public void introduction(){
@@ -89,7 +89,7 @@ public class Executor{
 
     if (disads == 3){
       gameOver();
-    }else if (errorThreshold == 0 && errorsMade > 0){
+    }else if (errorThreshold == 1 && errorsMade = errorThreshold){
       disads++;
       System.out.println("We expected perfection, but you made a mistake. No. You ARE the mistake. Do better.");
       System.out.println("You have received a disadulation. You now have " + disads + " disadulations. Three disadulations and you're fired!");
@@ -116,9 +116,13 @@ public class Executor{
     errorsMade = 0;
     numDay++;
     numApps += 2;
-    if (errorThreshold > 0 && numDay % 3 == 0){
+    if (errorThreshold > 1 && numDay % 3 == 0){
       errorThreshold--;
-      System.out.println("You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make " + errorThreshold + "mistakes, you will receive a disadulation!");
+      if (errorThreshold==1){
+        System.out.println("You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, we expect perfection. You will receive a disadulation as soon as you make a mistake.");
+      }else{
+        System.out.println("You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make " + errorThreshold + "mistakes, you will receive a disadulation!");  
+      }
     }
   }
 

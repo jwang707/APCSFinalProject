@@ -11,12 +11,12 @@ public class Executor{
 
   public Executor(){
     errorsMade = 0;
-    decisionsMade = 0;
-    dailyBenchmark = 5;
+    decisionsMade = 0; //total number of decisions made accross all days
+    dailyBenchmark = 4; //number of apps that you shld get right
     disads = 0;
-    numApps = 7;
-    numDay = 0;
-    errorThreshold = 3;
+    numApps = 7; //number of apps in one day
+    numDay = 1;
+    errorThreshold = 3; //number of errors allowed in a given day. for future days, it should be set to numApps - dailyBenchmark
   }
 
   public void introduction(){
@@ -84,18 +84,22 @@ public class Executor{
   }
 
 
-//need to look at this more
   public void errorMade(){
     errorsMade++;
-    System.out.println("You did a bad job. Be sad. You now have " + errorsMade + " mistakes. Make three mistakes and get a disadulation! Beware.");
-    if (errorsMade == 3){
-      disads++;
-      System.out.println("Tut tut. You've made three mistakes. That's a disadulation! You now have " + disads + " disadulations. Three disadulations and you're fired!");
-    }
+
     if (disads == 3){
       gameOver();
+    }else if (errorsMade == errorThreshold){
+      disads++;
+      System.out.println("Tut tut. You've made " + errorThreshold + " mistakes. That's a disadulation! You now have " + disads + " disadulations. Three disadulations and you're fired!");
+    }else{
+      System.out.println("You did a bad job. Be sad. You now have " + errorsMade + " mistakes.");
+      System.out.println("This is a written warning. If you make " + errorThreshold + " mistakes today, you will receive a full disadulation.");
     }
+
   }
+
+  //might want to rewrite this
 
   public void gameOver(){ // will be more complex in processing (like a fadey screen or whatveer, more dramatic)
     System.out.println("Three strikes and you're out! You're FIRED!");

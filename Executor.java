@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Executor{
-  private int errorsMade, decisionsMade, dailyBenchmark, disads, numApps, numDay, errorThreshold;
+  private int errorsMade, decisionsMade, disads, numApps, numDay, errorThreshold;
   String[] acceptanceLetter = {"We are overjoyed to inform you of your acceptance to ", "Hey, congrats, you got into ",
   "As expected, you got into ", "Is this even a surprise? You got into ", "For the next four years, you will be attending ",
   "Get excited, because you’ve been accepted to ", "Let’s just get it over with. Welcome to ", "Ring the alarm bells! You got into ",
@@ -12,7 +12,7 @@ public class Executor{
   public Executor(){
     errorsMade = 0;
     decisionsMade = 0; //total number of decisions made accross all days
-    dailyBenchmark = 4; //number of apps that you shld get right
+  //  dailyBenchmark = 4; //number of apps that you shld get right
     disads = 0;
     numApps = 7; //number of apps in one day
     numDay = 1;
@@ -89,9 +89,15 @@ public class Executor{
 
     if (disads == 3){
       gameOver();
+    }else if (errorThreshold == 0 && errorsMade > 0){
+      disads++;
+      System.out.println("We expected perfection, but you made a mistake. No. You ARE the mistake. Do better.");
+      System.out.println("You have received a disadulation. You now have " + disads + " disadulations. Three disadulations and you're fired!");
+      errorsMade = 0;
     }else if (errorsMade == errorThreshold){
       disads++;
       System.out.println("Tut tut. You've made " + errorThreshold + " mistakes. That's a disadulation! You now have " + disads + " disadulations. Three disadulations and you're fired!");
+      errorsMade = 0;
     }else{
       System.out.println("You did a bad job. Be sad. You now have " + errorsMade + " mistakes.");
       System.out.println("This is a written warning. If you make " + errorThreshold + " mistakes today, you will receive a full disadulation.");
@@ -110,7 +116,7 @@ public class Executor{
     errorsMade = 0;
     numDay++;
     numApps += 2;
-    if (numDay % 3 == 0){
+    if (errorThreshold > 0 && numDay % 3 == 0){
       errorThreshold--;
       System.out.println("You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make " + errorThreshold + "mistakes, you will receive a disadulation!");
     }

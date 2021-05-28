@@ -105,7 +105,7 @@ public class Executor{
 
   }
 
-  //might want to rewrite this
+  //might want to rewrite/rework this
 
   public void gameOver(){ // will be more complex in processing (like a fadey screen or whatever, more dramatic)
     System.out.println("Three strikes and you're out! You're FIRED!");
@@ -127,9 +127,10 @@ public class Executor{
   }
 
   public void day(){
-    System.out.println("Good morning! Time for you to get to work.");
+    System.out.println("Good morning! Time for you to get to work. Today is Day " + numDay + " .");
 
     for (int i = 0; i < numApps; i++){
+      //generate application etc.
       // should run through an application, still need to figure out how to get user input????
 
     }

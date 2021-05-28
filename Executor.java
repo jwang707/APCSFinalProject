@@ -89,7 +89,7 @@ public class Executor{
 
     if (disads == 3){
       gameOver();
-    }else if (errorThreshold == 1 && errorsMade = errorThreshold){
+    }else if (errorThreshold == 1 && errorsMade == errorThreshold){
       disads++;
       System.out.println("We expected perfection, but you made a mistake. No. You ARE the mistake. Do better.");
       System.out.println("You have received a disadulation. You now have " + disads + " disadulations. Three disadulations and you're fired!");
@@ -107,7 +107,7 @@ public class Executor{
 
   //might want to rewrite this
 
-  public void gameOver(){ // will be more complex in processing (like a fadey screen or whatveer, more dramatic)
+  public void gameOver(){ // will be more complex in processing (like a fadey screen or whatever, more dramatic)
     System.out.println("Three strikes and you're out! You're FIRED!");
   }
 
@@ -121,7 +121,7 @@ public class Executor{
       if (errorThreshold==1){
         System.out.println("You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, we expect perfection. You will receive a disadulation as soon as you make a mistake.");
       }else{
-        System.out.println("You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make " + errorThreshold + "mistakes, you will receive a disadulation!");  
+        System.out.println("You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make " + errorThreshold + "mistakes, you will receive a disadulation!");
       }
     }
   }

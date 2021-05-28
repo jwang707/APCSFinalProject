@@ -2,7 +2,11 @@ import java.util.*;
 
 public class Executor{
   private int errorsMade, decisionsMade, dailyBenchmark, disads, numApps, numDay, errorThreshold;
-  String[] acceptanceLetter = {"We are overjoyed to inform you of your acceptance to ", "Hey, congrats, you got into ", "As expected, you got into ", "Is this even a surprise? You got into ", "For the next four years, you will be attending ", "Get excited, because you’ve been accepted to ", "Let’s just get it over with. Welcome to ", "Ring the alarm bells! You got into ", "Our sincerest condolences, but the only school we could fit you in was (drumroll, please...): ", "I hope you like college, because you’re going to "};
+  String[] acceptanceLetter = {"We are overjoyed to inform you of your acceptance to ", "Hey, congrats, you got into ",
+  "As expected, you got into ", "Is this even a surprise? You got into ", "For the next four years, you will be attending ",
+  "Get excited, because you’ve been accepted to ", "Let’s just get it over with. Welcome to ", "Ring the alarm bells! You got into ",
+  "Our sincerest condolences, but the only school we could fit you in was (drumroll, please...): ",
+  "I hope you like college, because you’re going to "};
   // TOTAL COUNT: 10, for now!
 
   public Executor(){
@@ -16,36 +20,40 @@ public class Executor{
   }
 
   public void introduction(){
-    System.out.println("It is the year 2050. There are three options for higher education past high school in the United States: Harvard, MIT, and Greendale Community College. The admissions process has been streamlined. Applicants submit one document with their grades, extracurriculars, intended major, and statement of purpose. You are the inspector. Follow the guidelines for admission. Make Harvard and MIT proud.");
+    System.out.println("It is the year 2050. There are three options for higher education past high school in the United States: Harvard, MIT, and Greendale Community College. The admissions process has been streamlined. Applicants submit one document with their grades, intended major, extracurriculars, and statement of purpose. You are the inspector. Follow the guidelines for admission. Make Harvard and MIT proud.");
     // will be more complicated when implemented in processing!
   }
 
   public void compare(Application app, String userDecision){ // this will be rewritten once we're in processing!
-    int userDecision = -1;
+    int intDecision = -1;
     String decision = userDecision.toLowerCase();
 
     if (decision.contains("harvard")){ // decision making will be replaced by BUTTONS in processing
-      userDecision = 1;
+      intDecision = 1;
     }
     if (decision.contains("greendale")){
-      userDecision = 0;
+      intDecision = 0;
     }
-    if (decision.contains("mit"))){
-      userDecision = 2;
+    if (decision.contains("mit")){
+      intDecision = 2;
     }
 
-    if (userDecision == -1){ // catches bad user input, technically unnecessary but i like dissing people
-      System.out.println("How can you call yourself an admissions officer when you can't even choose correctly?")
+    //catches bad user input in which they try to submit multiple colleges to cheat the system... nice try.
+    if ((decision.contains("harvard") && decision.contains("mit")) ||
+        (decision.contains("harvard") && decision.contains("greendale")) ||
+        (decision.contains("mit") && decision.contains("greendale")))
+        {
+          intDecision = -1;
+        }
+
+    if (intDecision == -1){ // catches bad user input, technically unnecessary but i like dissing people
+      System.out.println("How can you call yourself an admissions officer when you can't even choose correctly?");
       errorMade(); // runs failure
-      return;
-    }
-    if (userDecision == app.getCollege()){
-      printAcceptance(userDecision);
-      return;
+    }else  if (intDecision == app.getCollege()){
+      printAcceptance(intDecision);
     }
     else{
       errorMade();
-      return;
     }
   }
 

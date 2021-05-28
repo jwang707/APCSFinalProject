@@ -80,12 +80,14 @@ public class Executor{
   }
 
   public void showApp(Application app){
-    System.out.println("APPLICATION #" + decisionsMade + "\n ID: " + (int) (Math.random() * 99999999) + "\n GPA: " + app.getGPA() + "\n SAT: " + app.getSAT() + "\n Extracurriculars: \n" + app.getECs(); + "\n Statement of Purpose: " + app.getStatement());
+    System.out.println("APPLICATION #" + (decisionsMade+1) + "\n ID: " + (int) (Math.random() * 99999999) + "\n GPA: " + app.getGPA() + "\n SAT: " + app.getSAT() + "\n Intended Major: " + app.getMajor() + "\n Extracurriculars: \n" + app.getECsString() + "\n Statement of Purpose: " + app.getStatement());
   }
 
+
+//need to look at this more
   public void errorMade(){
     errorsMade++;
-    System.out.println("You did a bad job. Be sad. You now have " + errorsMade + " mistakes. Make three mistakes and get a disadulation!");
+    System.out.println("You did a bad job. Be sad. You now have " + errorsMade + " mistakes. Make three mistakes and get a disadulation! Beware.");
     if (errorsMade == 3){
       disads++;
       System.out.println("Tut tut. You've made three mistakes. That's a disadulation! You now have " + disads + " disadulations. Three disadulations and you're fired!");

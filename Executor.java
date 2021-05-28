@@ -73,7 +73,10 @@ public class Executor{
   }
 
   public void showRules(Standards standard){ // will be slightly more complex in processing
-    System.out.println("Hello, officer. The rules for today are as follows: \n \n GPA >= " + standard.getReqGPA(); + "\n SAT >= " + standard.getReqSAT() + "\n At least 3 valid extracurriculars. \n A statement of purpose without spelling errors.");
+    System.out.println("Hello, officer. The rules for today are as follows: \n \n GPA >= " + standard.getReqGPA() + "\n SAT >= " + standard.getReqSAT() + "\n A valid intenteded major, either aligned towards STEM or Humanities." + "\n Three valid extracurriculars. A valid extracurricular is defined as a productive use of time and/or aligning with the student's STEM or Humanities focus and/or a standout accomplishment. All three extracurriculars must be valid. \n A statement of purpose without spelling errors.");
+    System.out.println("Students admitted to Harvard must have a passion for Humanities. Students admitted to MIT must have a passion for STEM. This can be determined through their intended major and extracurriculars, assuming both are valid.");
+    System.out.println("All students with errors in their applications should be admitted to Greendale Community College.");
+    System.out.println("Good luck!");
   }
 
   public void showApp(Application app){

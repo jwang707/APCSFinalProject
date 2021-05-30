@@ -107,7 +107,7 @@ public class Executor{
     }else if (errorsMade == errorThreshold){
       disads++;
       if (disads == 1){
-        System.out.println("You have received a disadulation. You now have " + disads + " disadulation. Three disadulations and you're fired!");
+        System.out.println("Tut tut. You've made " + errorThreshold + " mistakes. That's a disadulation! You now have " + disads + " disadulation. Three disadulations and you're fired!");
       }else if (disads == 3){
         gameOver();
       }else{

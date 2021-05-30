@@ -1,5 +1,7 @@
 import java.util.*;
 
+//in processing, variables like errorThreshold, errorsMade, decisionsMade, and disads will be constantly visible
+
 public class Executor{
   private int errorsMade, decisionsMade, disads, numApps, numDay, errorThreshold;
   private boolean gameOver = false;
@@ -158,6 +160,17 @@ public class Executor{
       compare(app, dec);
       System.out.println();
 
+    }
+
+  }
+
+  public static void main(String[] args){
+    //loop through days, actually runs the thing
+    Executor game = new Executor();
+
+    while (! game.gameOver){
+      game.day();
+      game.endOfDay();
     }
 
   }

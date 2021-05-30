@@ -139,7 +139,7 @@ public class Application{
 
     //default good sat and GPA
     gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10) / 10.0;
-    sat = ((int)(Math.random()*(1600 - minSAT)) + minSAT) /10 *10;
+    sat = ((int)(Math.random()*(1601 - minSAT)) + minSAT) /10 *10;
 
 
     if (college == 2){
@@ -192,7 +192,7 @@ public class Application{
 
       if (error.equals("gpa")){
 
-        gpa = Math.round(Math.random()*minGPA*10) / 10.0;
+        gpa = Math.round((Math.random()*(minGPA - 40) + 40) *10) / 10.0;
 
       }else if (error.equals("sat")){
 
@@ -282,7 +282,7 @@ public class Application{
   }
 
   public static void main(String[] args){
-    Application app = new Application();
+  /*  Application app = new Application();
 
     System.out.println();
     System.out.println("NEW APPLICATION");
@@ -330,7 +330,7 @@ public class Application{
     System.out.println("-----------------ERROR-----------------");
     System.out.println();
     System.out.println("ERROR: " + app.error);
-    System.out.println();
+    System.out.println(); */
 
   }
 

@@ -103,7 +103,11 @@ public class Executor{
       System.out.println("Tut tut. You've made " + errorThreshold + " mistakes. That's a disadulation! You now have " + disads + " disadulations. Three disadulations and you're fired!");
       errorsMade = 0;
     }else{
-      System.out.println("You did a bad job. Be sad. You now have " + errorsMade + " mistakes.");
+      if (errorsMade == 1){
+        System.out.println("You did a bad job. Be sad. You now have " + errorsMade + " mistake.");
+      }else{
+        System.out.println("You did a bad job. Be sad. You now have " + errorsMade + " mistakes.");
+      }
       System.out.println("This is a written warning. If you make " + errorThreshold + " mistakes today, you will receive a full disadulation.");
     }
 
@@ -126,7 +130,7 @@ public class Executor{
       if (errorThreshold==1){
         System.out.println("You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, we expect perfection. You will receive a disadulation as soon as you make a mistake.");
       }else{
-        System.out.println("You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make " + errorThreshold + "mistakes, you will receive a disadulation!");
+        System.out.println("You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make " + errorThreshold + " mistakes, you will receive a disadulation!");
       }
     }
   }

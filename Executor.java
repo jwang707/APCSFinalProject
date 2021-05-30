@@ -76,7 +76,7 @@ public class Executor{
   }
 
   public void showRules(Application app){ // will be slightly more complex in processing
-    System.out.println("Here are your rules: \n \n • GPA >= " + app.getStand().getReqGPA() + "\n • SAT >= " + app.getStand().getReqSAT() + "\n • A valid intenteded major, either aligned towards STEM or Humanities." + "\n • Three valid extracurriculars. \n \t • A valid extracurricular is defined as a productive use of time/standout accomplishment. \n \t • It must align with the student's STEM or Humanities focus. \n \t • All three extracurriculars must be valid. \n • A statement of purpose without spelling errors.");
+    System.out.println("Here are your rules: \n \n • GPA >= " + app.getStand().getReqGPA() + "\n • SAT >= " + app.getStand().getReqSAT() + "\n • A valid intenteded major, either aligned towards STEM or Humanities." + "\n • Three valid extracurriculars. \n \t • A valid extracurricular is defined as a productive use of time and/or a standout accomplishment. \n \t • It must align with the student's STEM or Humanities focus. \n \t • All three extracurriculars must be valid. \n • A statement of purpose without spelling errors.");
     System.out.println(" • Students admitted to Harvard must have a passion for Humanities. Students admitted to MIT must have a passion for STEM. This can be determined through their intended major and extracurriculars, assuming both are valid.");
     System.out.println(" • All students with errors in their applications should be admitted to Greendale Community College.");
     System.out.println("Good luck!");
@@ -145,14 +145,18 @@ public class Executor{
       //shows current mood and corresponding rules for this current application
       System.out.println("You are currently in a " + app.getStand().getMoodString() + " mood.");
       showRules(app);
+      System.out.println();
 
       //prints application
+      System.out.println();
       showApp(app);
+      System.out.println();
 
       //user input
       Scanner sc = new Scanner(System.in);
       System.out.println("Enter your decision: ");
       String dec = sc.nextLine();
+      System.out.println();
 
       //compare
         //that will print acceptance or call errorsMade

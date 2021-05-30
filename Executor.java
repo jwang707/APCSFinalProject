@@ -2,7 +2,8 @@ import java.util.*;
 
 public class Executor{
   private int errorsMade, decisionsMade, disads, numApps, numDay, errorThreshold;
-  String[] acceptanceLetter = {"We are overjoyed to inform you of your acceptance to ", "Hey, congrats, you got into ",
+  private boolean gameOver = false;
+  private String[] acceptanceLetter = {"We are overjoyed to inform you of your acceptance to ", "Hey, congrats, you got into ",
   "As expected, you got into ", "Is this even a surprise? You got into ", "For the next four years, you will be attending ",
   "Get excited, because you’ve been accepted to ", "Let’s just get it over with. Welcome to ", "Ring the alarm bells! You got into ",
   "Our sincerest condolences, but the only school we could fit you in was (drumroll, please...): ",
@@ -73,7 +74,7 @@ public class Executor{
   }
 
   public void showRules(Application app){ // will be slightly more complex in processing
-    System.out.println("Hello, officer. The rules for today are as follows: \n \n GPA >= " + app.getStand().getReqGPA() + "\n SAT >= " + app.getStand().getReqSAT() + "\n A valid intenteded major, either aligned towards STEM or Humanities." + "\n Three valid extracurriculars. A valid extracurricular is defined as a productive use of time and/or aligning with the student's STEM or Humanities focus and/or a standout accomplishment. All three extracurriculars must be valid. \n A statement of purpose without spelling errors.");
+    System.out.println("Officer, here are your rules: \n \n GPA >= " + app.getStand().getReqGPA() + "\n SAT >= " + app.getStand().getReqSAT() + "\n A valid intenteded major, either aligned towards STEM or Humanities." + "\n Three valid extracurriculars. A valid extracurricular is defined as a productive use of time and/or aligning with the student's STEM or Humanities focus and/or a standout accomplishment. All three extracurriculars must be valid. \n A statement of purpose without spelling errors.");
     System.out.println("Students admitted to Harvard must have a passion for Humanities. Students admitted to MIT must have a passion for STEM. This can be determined through their intended major and extracurriculars, assuming both are valid.");
     System.out.println("All students with errors in their applications should be admitted to Greendale Community College.");
     System.out.println("Good luck!");
@@ -109,6 +110,7 @@ public class Executor{
 
   public void gameOver(){ // will be more complex in processing (like a fadey screen or whatever, more dramatic)
     System.out.println("Three strikes and you're out! You're FIRED!");
+    gameOver = true;
   }
 
   public void endOfDay(){
@@ -129,22 +131,32 @@ public class Executor{
   public void day(){
     System.out.println("Good morning! Time for you to get to work.");
     System.out.println("Today is Day " + numDay + " . You will be given " + numApps + " applications to review. You will receive a disadulation for every " + errorThreshold + " mistakes you make today.");
-    System.out.println("Here is your first application.");
 
-    for (int i = 0; i < numApps; i++){
+    for (int i = 0; ! gameOver && i < numApps; i++){
+      System.out.println("Here is Application #" + numApps + ".");
+      System.out.println();
+
+      //generates application
       Application app = new Application();
 
+      //shows current mood and corresponding rules for this current application
+      System.out.println("You are currently in a " + app.getStand().getMoodString() + " mood.");
       showRules(app);
 
-      //show rules and current mood
-      //generate application
-      //prompt user for input (where they go to college)
+      //prints application
+      showApp(app);
+
+      //user input
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Enter your decision: ");
+      String dec = sc.nextLine();
+
       //compare
         //that will print acceptance or call errorsMade
           //which can call gameOver
-            //boolean gameOver that stops the loop?
-      //generate application etc.
-      // should run through an application, still need to figure out how to get user input????
+            //boolean gameOver stops the loop (in for statement)
+      compare(app, dec);
+      System.out.println();
 
     }
 

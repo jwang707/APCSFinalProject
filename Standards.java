@@ -33,5 +33,22 @@ public class Standards{
     return currMood;
   }
 
+  public String getMoodString(){
+    if (currMood == -1){
+      return "bad";
+    }
+    if (currMood == 0){
+      return "neutral";
+    }
+    if (currMood == 1){
+      return "good";
+    }else{
+      //this shouldn't happen but it's here to catch if it does
+      return "neutral";
+    }
+
+
+  }
+
 
 }

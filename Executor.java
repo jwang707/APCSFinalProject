@@ -91,20 +91,28 @@ public class Executor{
   public void errorMade(){
     errorsMade++;
 
-    if (disads >= 2){
+    if (disads == 3){
       gameOver();
     }else if (errorThreshold == 1 && errorsMade == errorThreshold){
       disads++;
       System.out.println("We expected perfection, but you made a mistake. No. You ARE the mistake. Do better.");
       if (disads == 1){
         System.out.println("You have received a disadulation. You now have " + disads + " disadulation. Three disadulations and you're fired!");
+      }else if (disads == 3){
+        gameOver();
       }else{
         System.out.println("You have received a disadulation. You now have " + disads + " disadulations. Three disadulations and you're fired!");
       }
       errorsMade = 0;
     }else if (errorsMade == errorThreshold){
       disads++;
-      System.out.println("Tut tut. You've made " + errorThreshold + " mistakes. That's a disadulation! You now have " + disads + " disadulations. Three disadulations and you're fired!");
+      if (disads == 1){
+        System.out.println("You have received a disadulation. You now have " + disads + " disadulation. Three disadulations and you're fired!");
+      }else if (disads == 3){
+        gameOver();
+      }else{
+        System.out.println("Tut tut. You've made " + errorThreshold + " mistakes. That's a disadulation! You now have " + disads + " disadulations. Three disadulations and you're fired!");
+      }
       errorsMade = 0;
     }else{
       if (errorsMade == 1){
@@ -120,6 +128,7 @@ public class Executor{
   //might want to rewrite/rework this
 
   public void gameOver(){ // will be more complex in processing (like a fadey screen or whatever, more dramatic)
+    System.out.println();
     System.out.println("Three strikes and you're out! You're FIRED!");
     gameOver = true;
   }
@@ -143,7 +152,7 @@ public class Executor{
     System.out.println();
     System.out.println("--------------------------------------------------------------");
     System.out.println("Good morning! Time for you to get to work.");
-    
+
     if (errorThreshold == 1){
       System.out.println("Today is Day " + numDay + ". You will be given " + numApps + " applications to review. You will receive a disadulation for every " + errorThreshold + " mistake you make today.");
     }else{
@@ -180,7 +189,7 @@ public class Executor{
             //boolean gameOver stops the loop (in for statement)
       compare(app, dec);
       System.out.println();
-      wait(1000);
+      wait(3000);
       decisionsMade++;
 
     }
@@ -209,7 +218,7 @@ public class Executor{
       game.day();
 
       if (! game.gameOver){
-        wait(1000);
+        wait(2000);
         game.endOfDay();
       }
 

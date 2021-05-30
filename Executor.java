@@ -23,7 +23,7 @@ public class Executor{
   }
 
   public void introduction(){
-    System.out.println("It is the year 2050. There are three options for higher education past high school in the United States: Harvard, MIT, and Greendale Community College. The admissions process has been streamlined. Applicants submit one document with their grades, intended major, extracurriculars, and statement of purpose. You are the inspector. Follow the guidelines for admission. Make Harvard and MIT proud.");
+    System.out.println("It is the year 2050. There are three options for higher education past high school in the United States: Harvard, MIT, and Greendale Community College. The admissions process has been streamlined. Applicants submit one document with their grades, intended major, extracurriculars, and statement of purpose. You are the Admissions Officer. Follow the guidelines for admission. Make Harvard and MIT proud.");
     // will be more complicated when implemented in processing!
   }
 
@@ -76,7 +76,7 @@ public class Executor{
   }
 
   public void showRules(Application app){ // will be slightly more complex in processing
-    System.out.println("Here are your rules: \n • GPA >= " + app.getStand().getReqGPA() + "\n • SAT >= " + app.getStand().getReqSAT() + "\n • A valid intenteded major, either aligned towards STEM or Humanities." + "\n • Three valid extracurriculars. \n \t • A valid extracurricular is defined as a productive use of time and/or a standout accomplishment. \n \t • It must align with the student's STEM or Humanities focus. \n \t • All three extracurriculars must be valid. \n • A statement of purpose without spelling errors.");
+    System.out.println("Here are your rules: \n • GPA >= " + app.getStand().getReqGPA() + "\n • SAT >= " + app.getStand().getReqSAT() + "\n • A valid intended major, either aligned towards STEM or Humanities." + "\n • Three valid extracurriculars. \n \t • A valid extracurricular is defined as a productive use of time and/or a standout accomplishment. \n \t • It must align with the student's STEM or Humanities focus. \n \t • All three extracurriculars must be valid. \n • A statement of purpose without spelling errors.");
     System.out.println(" • Students admitted to Harvard must have a passion for Humanities. Students admitted to MIT must have a passion for STEM. This can be determined through their intended major and extracurriculars, assuming both are valid.");
     System.out.println(" • All students with errors in their applications should be admitted to Greendale Community College.");
     System.out.println();
@@ -91,12 +91,16 @@ public class Executor{
   public void errorMade(){
     errorsMade++;
 
-    if (disads == 3){
+    if (disads >= 2){
       gameOver();
     }else if (errorThreshold == 1 && errorsMade == errorThreshold){
       disads++;
       System.out.println("We expected perfection, but you made a mistake. No. You ARE the mistake. Do better.");
-      System.out.println("You have received a disadulation. You now have " + disads + " disadulations. Three disadulations and you're fired!");
+      if (disads == 1){
+        System.out.println("You have received a disadulation. You now have " + disads + " disadulation. Three disadulations and you're fired!");
+      }else{
+        System.out.println("You have received a disadulation. You now have " + disads + " disadulations. Three disadulations and you're fired!");
+      }
       errorsMade = 0;
     }else if (errorsMade == errorThreshold){
       disads++;
@@ -139,7 +143,12 @@ public class Executor{
     System.out.println();
     System.out.println("--------------------------------------------------------------");
     System.out.println("Good morning! Time for you to get to work.");
-    System.out.println("Today is Day " + numDay + ". You will be given " + numApps + " applications to review. You will receive a disadulation for every " + errorThreshold + " mistakes you make today.");
+    if (errorThreshold == 1){
+      System.out.println("Today is Day " + numDay + ". You will be given " + numApps + " applications to review. You will receive a disadulation for every " + errorThreshold + " mistake you make today.");
+    }else{
+      System.out.println("Today is Day " + numDay + ". You will be given " + numApps + " applications to review. You will receive a disadulation for every " + errorThreshold + " mistakes you make today.");
+    }
+
 
     for (int i = 0; ! gameOver && i < numApps; i++){
       System.out.println();
@@ -179,9 +188,15 @@ public class Executor{
     //loop through days, actually runs the thing
     Executor game = new Executor();
 
+    System.out.println();
+    System.out.println();
+    game.introduction();
+
     while (! game.gameOver){
       game.day();
-      game.endOfDay();
+      if (! game.gameOver){
+        game.endOfDay();
+      }
     }
 
   }

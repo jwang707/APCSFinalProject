@@ -267,14 +267,14 @@ public class Application{
   }
 
   public String getECsString(){
-    String str = "";
+    String str = "\t ";
 
     for (int i = 0; i<3; i++){
       str+=i+1;
       str+=". ";
       str+=ECs[i];
       if (i < 2){
-        str+="\n";
+        str+="\n \t ";
       }
     }
 
@@ -282,7 +282,7 @@ public class Application{
   }
 
   public static void main(String[] args){
-  /*  Application app = new Application();
+    Application app = new Application();
 
     System.out.println();
     System.out.println("NEW APPLICATION");
@@ -331,7 +331,7 @@ public class Application{
     System.out.println();
     System.out.println("ERROR: " + app.error);
     System.out.println();
-    */
+
   }
 
 

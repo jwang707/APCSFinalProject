@@ -13,7 +13,13 @@ Nour:
 During class (5/24), I started working on the Application class. I wrote all the instance variables and then Jasmine and I worked on creating our word bank arrays, which I added to the class the next morning (5/25). Right now, I just finished writing most of the constructor, including the college generator, the statement generator, the gpa and sat generator based on Standards, the error generator, the faulty GPA and SAT, and the major generator for all three colleges. I also did some testing and fixed a small error in the Standards class that showed up as I was testing. I'm going to finish working on the class (extracurriculars generators for all three colleges, spelling errors in statement for greendale, and get() methods).
 
 5.26.2021
-During class, I wrote the extracurriculars generator and the random statement spelling errors generator. I also wrote all the get() methods. Later, I did some testing in the main and fixed an error with the extracurricular generator. I also wrote the toString() method for the extracurriculars list and added an instance variable Standard stand() and its corresponding get() method.
+During class, I wrote the extracurriculars generator and the random statement spelling errors generator. I also wrote all the get() methods. Later, I did some testing in the main and fixed an error with the extracurricular generator. I also wrote the toString() method for the extracurriculars list and added an instance variable Standard stand and its corresponding get() method.
+
+5.28.2021
+Before and during class, I worked on the Executor class. I fixed some compile errors, added more details to the rules and application print methods, and rewrote the errorsMade() method to be more aligned with the proposal and have the game increase in difficulty. 
+
+5.30.2021
+I finished and tested the Executor class! I wrote the day() and main methods and did a bunch of testing. I added a boolean gameOver variable to end the game when gameOver() (the method) was called. I also fixed some stuff with disadulations. I fixed A BUNCH of spelling and formatting things (very Greendalian of me to misspell "intended major"). I also edited the Application class slightly to make the bad GPAs slightly more reasonable (no more 2.6 GPAs) and made a major change such that it was possible for someone to get a 1600 on the SAT. 
 
 Jasmine:
 5/24/21 - 5/25/21

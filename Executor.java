@@ -140,6 +140,7 @@ public class Executor{
     System.out.println("--------------------------------------------------------------");
     System.out.println("Good morning! Time for you to get to work.");
     System.out.println("Today is Day " + numDay + ". You will be given " + numApps + " applications to review. You will receive a disadulation for every " + errorThreshold + " mistakes you make today.");
+    wait(1000);
 
     for (int i = 0; ! gameOver && i < numApps; i++){
       System.out.println();
@@ -169,18 +170,31 @@ public class Executor{
             //boolean gameOver stops the loop (in for statement)
       compare(app, dec);
       System.out.println();
+      wait(1000);
       decisionsMade++;
 
     }
-
   }
+
+  public static void wait(int ms){ // PURELY A JAVA THING!
+    try
+    {
+        Thread.sleep(ms);
+    }
+    catch(InterruptedException ex)
+    {
+        Thread.currentThread().interrupt();
+    }
+}
 
   public static void main(String[] args){
     //loop through days, actually runs the thing
     Executor game = new Executor();
+    game.introduction();
 
     while (! game.gameOver){
       game.day();
+      wait(1000);
       game.endOfDay();
     }
 

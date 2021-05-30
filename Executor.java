@@ -53,7 +53,7 @@ public class Executor{
       System.out.println("How can you call yourself an admissions officer when you can't even choose correctly?");
       errorMade(); // runs failure
     }else  if (intDecision == app.getCollege()){
-      printAcceptance(intDecision);
+      System.out.println(printAcceptance(intDecision));
     }
     else{
       errorMade();
@@ -165,6 +165,7 @@ public class Executor{
             //boolean gameOver stops the loop (in for statement)
       compare(app, dec);
       System.out.println();
+      decisionsMade++;
 
     }
 

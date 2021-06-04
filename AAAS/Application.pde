@@ -193,7 +193,7 @@ public class Application{
 
       if (error.equals("gpa")){
 
-        gpa = Math.round((Math.random()*(minGPA - 40) + 40) *10)
+        gpa = Math.round((Math.random()*(minGPA - 40) + 40) *10);
         gpa = gpa / 10.0;
 
       }else if (error.equals("sat")){
@@ -286,15 +286,15 @@ public class Application{
   void display(){
       fill(255, 255, 255);
       noStroke();
-      rect(450, 375, 650, 650, 7);
+      rect(460, 375, 700, 650, 7);
       fill(0, 0, 0);
-      rectMode(CORNER);
-      text("ID: " +  ID, 300, 120);
-      rectMode(CORNER);
-      text("GPA: " + gpa, 300, 200);
-      rectMode(CORNER);
-      text("SAT: " + sat, 300, 250);
-      text("Intended Major: " + intendedMajor, 300, 300);
+      textAlign(LEFT);
+      text("ID: " +  ID, 150, 120);
+      textSize(25);
+      text("GPA: " + gpa, 200, 200);
+      text("SAT: " + sat, 200, 250);
+      text("Intended Major: " + intendedMajor, 200, 300);
+      text("Extracurriculars:", 200, 350);
   }
 
 }

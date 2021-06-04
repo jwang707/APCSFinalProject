@@ -8,7 +8,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
   String type;
   boolean clicked;
   Application app;
-  boolean appExists = false;
+  boolean appExists;
   
   Button(String name){ // constructor
     ellipseMode(CENTER);
@@ -44,6 +44,10 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     circleHighlight = color(130);
     cirX = 500; cirY = 500; 
   }
+  
+  Application getApp(){
+    return app;
+  }
 
   void display(){
     noStroke();
@@ -63,6 +67,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     else {circleOver = false;}
     if (clicked && type.equals("newApp")){
       app.display();
+      appExists = true;
     }
   }
 
@@ -72,26 +77,31 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     return (sqrt(sq(disX) + sq(disY)) < size/2);
   }
   
-  void click(){
-    if (hovering()){
-      clicked = true;
-      if (type.equals("newApp")){
-        app = new Application();
-        appExists = true; 
-      }
-      if (appExists){
-        fill(0, 0, 0);
-        if (type.equals("harvard")){
-            text("Decision: Harvard", 150, 600);
-        }  
-        if (type.equals("mit")){
-            text("Decision: MIT", 150, 600);
-        }  
-        if (type.equals("greendale")){
-            text("Decision: Greendale", 150, 600);
-        }  
-      }
+  void click(Application currentApp){ /*
+    if (appExists){
+      text("true", 800, 650);
     }
+    else{text("false", 800, 700);}
+    */ // broken as for now
+    
+    clicked = true;
+    if (type.equals("newApp")){
+      app = new Application();
+      //app.toggleApp(true); 
+    }
+    else{
+      app = currentApp;
+    }
+    fill(0, 0, 0);
+    if (type.equals("harvard")){
+        app.update("Harvard"); // problem here
+    }  
+    if (type.equals("mit")){
+        app.update("MIT");
+    }  
+    if (type.equals("greendale")){
+        app.update("Greendale");
+    }  
   }
 
 

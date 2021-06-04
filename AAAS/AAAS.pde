@@ -10,14 +10,19 @@ int backBlue = 92;
 boolean appToggled = false;
 
 ArrayList<Button> buttons;
+Button newAppButton;
+Application app;
 
 void setup(){
   size(1330,756);
   buttons = new ArrayList<Button>();
+  newAppButton = new Button("newAppButton");
   buttons.add(new Button("harvard"));
-  buttons.add(new Button("newAppButton"));
+  buttons.add(newAppButton);
   buttons.add(new Button("mit"));
   buttons.add(new Button("greendale"));
+  
+  
 }
 
 void draw(){
@@ -62,7 +67,7 @@ void draw(){
   }
   
 }
-
+  
 void mousePressed(){
   if (state == unstarted){
     state = intro;
@@ -70,7 +75,7 @@ void mousePressed(){
     state = started;
   }
   for (Button b : buttons){
-    b.click();
+    if (b.hovering())  b.click(newAppButton.getApp());
   }
   
 }

@@ -6,12 +6,15 @@ int backRed = 64;
 int backGreen = 78;
 int backBlue = 92;
 
+boolean appToggled = false;
+
 ArrayList<Button> buttons;
 
 void setup(){
   size(1330,756);
   buttons = new ArrayList<Button>();
   buttons.add(new Button("harvard"));
+  buttons.add(new Button("newAppButton"));
 
 }
 
@@ -45,8 +48,7 @@ void draw(){
      b.update();
      b.display();
    }
-      
-    
+   
     
   }
   
@@ -56,6 +58,9 @@ void draw(){
 void mousePressed(){
   if (state == unstarted){
     state = started;
+  }
+  for (Button b : buttons){
+    b.click();
   }
   
 }

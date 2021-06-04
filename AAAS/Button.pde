@@ -5,6 +5,8 @@ public class Button{ // used https://processing.org/examples/button.html for hel
   color currentColor;
   color circleHighlight;
   boolean circleOver = false;
+  String type;
+  boolean clicked;
   
   Button(String name){ // consturctor
     ellipseMode(CENTER);
@@ -12,6 +14,13 @@ public class Button{ // used https://processing.org/examples/button.html for hel
       circleColor = color(164, 16, 52);
       circleHighlight = color(77, 8, 25);
       cirX = 970; cirY = 60; 
+      type = "harvard";
+    }
+    if (name.equals("newAppButton")){
+      circleColor = color(139, 208, 169);
+      circleHighlight = color(81, 184, 126);
+      cirX = 35; cirY = 350; 
+      type = "newApp";
     }
   }
   
@@ -34,16 +43,30 @@ public class Button{ // used https://processing.org/examples/button.html for hel
   }
   
   void update(){
-    if (hovering(cirX, cirY, size)){
+    if (hovering()){
       circleOver = true;
     }
     else {circleOver = false;}
+    if (clicked && type.equals("newApp")){
+      Application app = new Application();
+      app.display();
+    }
   }
 
-  boolean hovering(int x, int y, int diameter){
-    float disX = x - mouseX;
-    float disY = y - mouseY;
-    return (sqrt(sq(disX) + sq(disY)) < diameter/2);
+  boolean hovering(){
+    float disX = cirX - mouseX;
+    float disY = cirY - mouseY;
+    return (sqrt(sq(disX) + sq(disY)) < size/2);
+  }
+  
+  void click(){
+    if (hovering()){
+      clicked = true;
+
+      if (type.equals("harvard")){
+        text("HARVARD!", 500, 500);
+      }    
+    }
   }
 
 }

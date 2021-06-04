@@ -3,15 +3,14 @@ import java.io.*;
 
 public class Application{
 
-
 //Application Variables
-  private String intendedMajor, statement;
-  private double gpa;
-  private int sat;
-  private String[] ECs = new String[3];
-  private int college;
-  private String error;
-  private Standards stand = new Standards();
+  String intendedMajor, statement;
+  double gpa;
+  int sat;
+  String[] ECs = new String[3];
+  int college;
+  String error;
+  Standards stand = new Standards();
 
 //Word Banks
   //index of arrays: 0 = greendale, 1 = harvard, 2 = mit
@@ -128,7 +127,7 @@ public class Application{
   String[] errorList = {"gpa", "sat", "IM", "EC", "statement"};
 
 
-  public Application(){
+  Application(){
     statement = Statements[(int)(Math.random()*30)];
     college = (int)(Math.random()*3);
     error = "none";
@@ -233,40 +232,40 @@ public class Application{
 
   }
 
-  public String getMajor(){
+ String getMajor(){
     return intendedMajor;
   }
 
-  public double getGPA(){
+  double getGPA(){
     return gpa;
   }
 
-  public String getStatement(){
+  String getStatement(){
     return statement;
 
   }
 
-  public int getSAT(){
+  int getSAT(){
     return sat;
   }
 
-  public String[] getECs(){
+  String[] getECs(){
     return ECs;
   }
 
-  public int getCollege(){
+  int getCollege(){
     return college;
   }
 
-  public String getError(){
+  String getError(){
     return error;
   }
 
-  public Standards getStand(){
+  Standards getStand(){
     return stand;
   }
 
-  public String getECsString(){
+  String getECsString(){
     String str = "\t ";
 
     for (int i = 0; i<3; i++){
@@ -281,5 +280,12 @@ public class Application{
     return str;
   }
 
+  void display(){
+      fill(255, 255, 255);
+      noStroke();
+      rect(100, 375, 830, 650);
+      fill(0, 0, 0);
+      text(intendedMajors[0][(int)Math.random()*30], 500, 500, 500, 500);
+  }
 
 }

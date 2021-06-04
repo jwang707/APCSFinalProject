@@ -272,11 +272,10 @@ public class Application{
     String str = "\t ";
 
     for (int i = 0; i<3; i++){
-      str+=i+1;
-      str+=". ";
+      str+= "• ";
       str+=ECs[i];
       if (i < 2){
-        str+="\n \t ";
+        str+="\n \t";
       }
     }
 
@@ -295,6 +294,9 @@ public class Application{
       text("SAT: " + sat, 200, 250);
       text("Intended Major: " + intendedMajor, 200, 300);
       text("Extracurriculars:", 200, 350);
+      text(getECsString(), 200, 380);
+      text("Statement: ", 200, 480);
+      text(statement, 525, 564.5, 400, 200);
   }
 
 }

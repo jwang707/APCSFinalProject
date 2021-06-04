@@ -7,6 +7,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
   boolean circleOver = false;
   String type;
   boolean clicked;
+  Application app;
   
   Button(String name){ // constructor
     ellipseMode(CENTER);
@@ -48,7 +49,6 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     }
     else {circleOver = false;}
     if (clicked && type.equals("newApp")){
-      Application app = new Application();
       app.display();
     }
   }
@@ -62,7 +62,9 @@ public class Button{ // used https://processing.org/examples/button.html for hel
   void click(){
     if (hovering()){
       clicked = true;
-
+      if (type.equals("newApp")){
+        app = new Application();
+      }
       if (type.equals("harvard")){
         text("HARVARD!", 500, 500);
       }    

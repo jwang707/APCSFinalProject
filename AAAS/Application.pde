@@ -10,6 +10,7 @@ public class Application{
   String[] ECs = new String[3];
   int college;
   String error;
+  int ID = (int) (Math.random() * 99999999);
   Standards stand = new Standards();
 
 //Word Banks
@@ -285,8 +286,9 @@ public class Application{
       noStroke();
       rect(450, 375, 650, 650, 7);
       fill(0, 0, 0);
-     // rect(665, 320, 1100, 260, 7);
-      text(intendedMajors[0][(int)Math.random()*30], 500, 500, 500, 500);
+      // rect(665, 320, 1100, 260, 7);
+      // text(intendedMajors[0][(int)Math.random()*30], 500, 500, 500, 500);
+      text("ID: " +  ID, 500, 500, 500, 500);
   }
 
 }

@@ -20,7 +20,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     if (name.equals("newAppButton")){
       circleColor = color(#99FFE7);
       circleHighlight = color(#5CFFD9);
-      cirX = 35; cirY = 350; 
+      cirX = 50; cirY = 350; 
       type = "newApp";
     }
     if (name.equals("mit")){

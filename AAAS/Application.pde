@@ -12,6 +12,7 @@ public class Application{
   String error;
   int ID = (int) (Math.random() * 99999999);
   Standards stand = new Standards();
+  String selectedSchool = "____________";  
 
 //Word Banks
   //index of arrays: 0 = greendale, 1 = harvard, 2 = mit
@@ -290,5 +291,5 @@ public class Application{
       // text(intendedMajors[0][(int)Math.random()*30], 500, 500, 500, 500);
       text("ID: " +  ID, 500, 500, 500, 500);
   }
-
+  
 }

@@ -16,8 +16,8 @@ void setup(){
   buttons = new ArrayList<Button>();
   buttons.add(new Button("harvard"));
   buttons.add(new Button("newAppButton"));
-
-
+  buttons.add(new Button("mit"));
+  buttons.add(new Button("greendale"));
 }
 
 void draw(){

@@ -18,10 +18,22 @@ public class Button{ // used https://processing.org/examples/button.html for hel
       type = "harvard";
     }
     if (name.equals("newAppButton")){
-      circleColor = color(139, 208, 169);
-      circleHighlight = color(81, 184, 126);
+      circleColor = color(#99FFE7);
+      circleHighlight = color(#5CFFD9);
       cirX = 35; cirY = 350; 
       type = "newApp";
+    }
+    if (name.equals("mit")){
+      circleColor = color(#ED7D3A);
+      circleHighlight = color(#CD5713);
+      cirX = 1070; cirY = 60; 
+      type = "mit";
+    }
+    if (name.equals("greendale")){
+      circleColor = color(139, 208, 169);
+      circleHighlight = color(81, 184, 126);
+      cirX = 1170; cirY = 60; 
+      type = "greendale";
     }
   }
   

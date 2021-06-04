@@ -283,8 +283,9 @@ public class Application{
   void display(){
       fill(255, 255, 255);
       noStroke();
-      rect(100, 375, 830, 650);
+      rect(450, 375, 650, 650, 7);
       fill(0, 0, 0);
+     // rect(665, 320, 1100, 260, 7);
       text(intendedMajors[0][(int)Math.random()*30], 500, 500, 500, 500);
   }
 

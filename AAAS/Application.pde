@@ -12,7 +12,6 @@ public class Application{
   String error;
   int ID = (int) (Math.random() * 99999999);
   Standards stand = new Standards();
-  String selectedSchool = "____________";  
 
 //Word Banks
   //index of arrays: 0 = greendale, 1 = harvard, 2 = mit
@@ -282,22 +281,6 @@ public class Application{
 
     return str;
   }
-
-  void display(){
-      fill(255, 255, 255);
-      noStroke();
-      rect(460, 375, 700, 650, 7);
-      fill(0, 0, 0);
-      textAlign(LEFT);
-      text("ID: " +  ID, 150, 120);
-      textSize(25);
-      text("GPA: " + gpa, 200, 200);
-      text("SAT: " + sat, 200, 250);
-      text("Intended Major: " + intendedMajor, 200, 300);
-      text("Extracurriculars:", 200, 350);
-      text(getECsString(), 200, 380);
-      text("Statement: ", 200, 480);
-      text(statement, 525, 564.5, 400, 200);
-  }
   
+
 }

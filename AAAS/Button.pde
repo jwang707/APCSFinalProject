@@ -8,6 +8,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
   String type;
   boolean clicked;
   Application app;
+  boolean appExists = false;
   
   Button(String name){ // constructor
     ellipseMode(CENTER);
@@ -76,10 +77,20 @@ public class Button{ // used https://processing.org/examples/button.html for hel
       clicked = true;
       if (type.equals("newApp")){
         app = new Application();
+        appExists = true; 
       }
-      if (type.equals("harvard")){
-        text("HARVARD!", 500, 500);
-      }    
+      if (appExists){
+        fill(0, 0, 0);
+        if (type.equals("harvard")){
+            text("Decision: Harvard", 150, 600);
+        }  
+        if (type.equals("mit")){
+            text("Decision: MIT", 150, 600);
+        }  
+        if (type.equals("greendale")){
+            text("Decision: Greendale", 150, 600);
+        }  
+      }
     }
   }
 

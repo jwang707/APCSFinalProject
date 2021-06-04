@@ -6,7 +6,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
   color circleHighlight;
   boolean circleOver = false;
   
-  Button(String name){ // consturctor
+  Button(String name){ // constructor
     ellipseMode(CENTER);
     if (name.equals("harvard")){ // harvard button!
       circleColor = color(164, 16, 52);

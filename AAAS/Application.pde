@@ -138,7 +138,8 @@ public class Application{
     int minSAT = stand.getReqSAT();
 
     //default good sat and GPA
-    gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10) / 10.0;
+    gpa = Math.round((Math.random()*(100 - minGPA) + minGPA)*10);
+    gpa = gpa / 10.0;
     sat = ((int)(Math.random()*(1601 - minSAT)) + minSAT) /10 *10;
 
 
@@ -192,7 +193,8 @@ public class Application{
 
       if (error.equals("gpa")){
 
-        gpa = Math.round((Math.random()*(minGPA - 40) + 40) *10) / 10.0;
+        gpa = Math.round((Math.random()*(minGPA - 40) + 40) *10)
+        gpa = gpa / 10.0;
 
       }else if (error.equals("sat")){
 
@@ -286,9 +288,13 @@ public class Application{
       noStroke();
       rect(450, 375, 650, 650, 7);
       fill(0, 0, 0);
-      // rect(665, 320, 1100, 260, 7);
-      // text(intendedMajors[0][(int)Math.random()*30], 500, 500, 500, 500);
-      text("ID: " +  ID, 500, 500, 500, 500);
+      rectMode(CORNER);
+      text("ID: " +  ID, 300, 120);
+      rectMode(CORNER);
+      text("GPA: " + gpa, 300, 200);
+      rectMode(CORNER);
+      text("SAT: " + sat, 300, 250);
+      text("Intended Major: " + intendedMajor, 300, 300);
   }
 
 }

@@ -56,7 +56,7 @@ void draw(){
    
    for (Button b : buttons){
      b.update();
-     b.display();
+     b.display();  
    }
    
     

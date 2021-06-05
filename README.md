@@ -21,6 +21,9 @@ Before and during class, I worked on the Executor class. I fixed some compile er
 5.30.2021
 I finished and tested the Executor class! I wrote the day() and main methods and did a bunch of testing. I added a boolean gameOver variable to end the game when gameOver() (the method) was called. I also fixed some stuff with disadulations. I fixed A BUNCH of spelling and formatting things (very Greendalian of me to misspell "intended major"). I also edited the Application class slightly to make the bad GPAs slightly more reasonable (no more 2.6 GPAs) and made a major change such that it was possible for someone to get a 1600 on the SAT. 
 
+6.3.2021 (Zoom call with Jasmine)
+Got a lot done in Processing yay! I made the intro screen (learned how to wrap text!) and worked on formatting and generating the application from the button. 
+
 Jasmine:
 5/24/21 - 5/25/21
 During class (5/24), I completed the Standards class with the necessary instance variables, constructor, and get methods. I then worked on the word bank arrays with Nour. On (5/25), I began to work on the Executor class (Java version), creating instance variables, constructor, and most of the methods, including the compare(), showRules(), and printApplication() methods. Towards the end I've run into a small problem with day() and am considering getting rid of it and combining it with the main method to make user input easier. (But that's a problem for tomorrow!) After this, I'll test to make sure our proof of concept/basic game works and then take on the greater beast of implementing it in Processing.

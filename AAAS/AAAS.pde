@@ -35,8 +35,8 @@ void draw(){
   rectMode(CENTER);
   textAlign(CENTER);
   
-  text(mouseX, 40, 30);
-  text(mouseY, 40, 60);
+  text("x: " + mouseX, 60, 30);
+  text("y: " + mouseY, 60, 60);
   
   if (state == unstarted){
     fill(183, 195, 243); // introduction stuff
@@ -81,5 +81,6 @@ void mousePressed(){
   for (Button b : buttons){
     if (b.hovering())  b.click(newAppButton.getApp());
   }
+  rules.click(standard);
   
 }

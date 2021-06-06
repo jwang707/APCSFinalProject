@@ -298,6 +298,7 @@ public class Application{
 
   
   void display(){
+    textSize(32);
     fill(255, 255, 255);
     noStroke();
     rect(460, 375, 700, 650, 7);

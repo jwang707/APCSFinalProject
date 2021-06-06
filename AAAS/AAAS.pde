@@ -12,6 +12,8 @@ boolean appToggled = false;
 ArrayList<Button> buttons;
 Button newAppButton;
 Application app;
+Rulebook rules;
+Standards standard;
 
 void setup(){
   size(1330,756);
@@ -21,8 +23,8 @@ void setup(){
   buttons.add(newAppButton);
   buttons.add(new Button("mit"));
   buttons.add(new Button("greendale"));
-  
-  
+  rules = new Rulebook();
+  standard = rules.getStandards();
 }
 
 void draw(){
@@ -58,6 +60,8 @@ void draw(){
      } if (backBlue != 114){
        backBlue++;
      }
+     
+   rules.display();
    
    for (Button b : buttons){
      b.update();

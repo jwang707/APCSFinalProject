@@ -32,4 +32,4 @@ During class (5/24), I completed the Standards class with the necessary instance
 I started work on Processing, implementing the title screen and beginning to work on basic buttons. I still have to update the UML diagram to include Processing classes (I did not realize how many I would need!)
 
 6/3/21
-Did a good chunk of work today in Processing, adding buttons including one that can create/display an application. Fiddled around with colors but I don't think it's ready to put in the demo.
+Did a good chunk of work today in Processing, adding buttons including one that can create/display an application. Fiddled around with colors but I don't think it's ready to put in the demo. Also ended up making buttons functional.

@@ -57,9 +57,26 @@ public class Rulebook{
       fill(#99FFE7); // new app color
       noStroke();
       circle(955, 350, 50);
+      fill(164, 16, 52); // harvard
+      circle(1000, 400, 50);
+      fill(#ED7D3A);
+      circle(1070, 400, 50);
+      fill(139, 208, 169);
+      circle(1140, 400, 50);
+      textAlign(CENTER);
+      fill(ruleText);
+      textSize(18);
+      text("Harvard", 1000, 460);
+      text("MIT", 1070, 460);
+      text("Greendale", 1150, 460);
+      textSize(22);
+      text("Use buttons to determine college. \n Follow standards as set by your \n supervisor's mood (See next page.)\n \n Failure to follow these guidelines \n will result in citations and disadulations.", 1073, 510);
+      
+      textAlign(LEFT);      
       fill(ruleText);
       textSize(18);
       text("Click to receive application", 1000, 350);
+      
       
   }
 

@@ -86,7 +86,8 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     
     clicked = true;
     if (type.equals("newApp")){
-      app = new Application();
+      rules = new Rulebook();
+      app = new Application(rules);
       //app.toggleApp(true); 
     }
     else{

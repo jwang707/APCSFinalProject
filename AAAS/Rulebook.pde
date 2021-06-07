@@ -4,14 +4,11 @@ public class Rulebook{
   color ruleText = color(#B85644);
 
   Rulebook(){
+    standard = new Standards();
   }
   
   Standards getStandards(){
     return standard;
-  }
-  
-  void newStandard(Application a){
-    standard = a.getStand();
   }
   
   void display(){
@@ -78,7 +75,6 @@ public class Rulebook{
       textSize(22);
       text("Use buttons to determine college. \n Follow standards as set by your \n supervisor's mood (See next page.)\n \n Repeated failure to follow these \n guidelines will result in disadulations.", 1073, 520);  
       textAlign(LEFT);      
-      fill(ruleText);
       textSize(18);
       text("Click to receive application", 1000, 350);
   }

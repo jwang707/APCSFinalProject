@@ -11,7 +11,7 @@ public class Application{
   int college;
   String error;
   int ID = (int) (Math.random() * 99999999);
-  Standards stand = new Standards();
+  Standards stand;
   String decision = "...";
   boolean appToggled = false;
   Rulebook rules;
@@ -131,7 +131,10 @@ public class Application{
   String[] errorList = {"gpa", "sat", "IM", "EC", "statement"};
 
 
-  Application(){
+  Application(Rulebook r){
+    rules = r;
+    stand = rules.getStandards();
+    
     statement = Statements[(int)(Math.random()*30)];
     college = (int)(Math.random()*3);
     error = "none";
@@ -297,8 +300,8 @@ public class Application{
     return appToggled;
   }
 
-  
   void display(){
+    rules = new Rulebook();
     textSize(32);
     fill(255, 255, 255);
     noStroke();
@@ -315,6 +318,7 @@ public class Application{
     text("Statement: ", 200, 480);
     text(statement, 525, 564.5, 400, 200);
     text("Decision: " + decision, 200, 600);
+    text("For testing purposes only: Mood is " + stand.getMoodString(), 200, 650);
   }
   
 

@@ -6,9 +6,7 @@ public class Standards{
     reqGPA = 94.0;
     reqSAT = 1550;
 
-
     currMood = (int) (Math.random()*3)-1; // random -1, 0, or 1
-
 
     if (currMood == -1){
       reqGPA += 2;

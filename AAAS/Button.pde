@@ -92,7 +92,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     else{
       app = currentApp;
     }
-    fill(0, 0, 0);
+    fill(0, 0, 0); // MINOR ISSUE HERE; if a button is pressed without an app being generated, it causes a null pointer exception
     if (type.equals("harvard")){
         app.update("Harvard"); // problem here
     }  

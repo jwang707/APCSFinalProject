@@ -82,5 +82,4 @@ void mousePressed(){
     if (b.hovering())  b.click(newAppButton.getApp());
   }
   rules.click(standard);
-  
 }

@@ -44,7 +44,7 @@ public class Standards{
       return "good";
     }else{
       //this shouldn't happen but it's here to catch if it does
-      return "neutral";
+      return "broke";
     }
 
 

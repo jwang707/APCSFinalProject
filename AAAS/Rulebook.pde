@@ -3,13 +3,15 @@ public class Rulebook{
   Standards standard;
   color ruleText = color(#B85644);
 
-  
   Rulebook(){
-    standard = new Standards();
   }
   
   Standards getStandards(){
     return standard;
+  }
+  
+  void newStandard(Application a){
+    standard = a.getStand();
   }
   
   void display(){
@@ -34,6 +36,10 @@ public class Rulebook{
       
       if (state == 1){
         rulesFirstPage(); // separate method bc it's very long
+      }
+      
+      if (state == 2){
+        rulesSecondPage(standard);
       }
     }
     textSize(20);
@@ -70,16 +76,21 @@ public class Rulebook{
       text("MIT", 1070, 460);
       text("Greendale", 1150, 460);
       textSize(22);
-      text("Use buttons to determine college. \n Follow standards as set by your \n supervisor's mood (See next page.)\n \n Failure to follow these guidelines \n will result in citations and disadulations.", 1073, 510);
-      
+      text("Use buttons to determine college. \n Follow standards as set by your \n supervisor's mood (See next page.)\n \n Repeated failure to follow these \n guidelines will result in disadulations.", 1073, 520);  
       textAlign(LEFT);      
       fill(ruleText);
       textSize(18);
       text("Click to receive application", 1000, 350);
-      
-      
   }
 
+  void rulesSecondPage(Standards s){
+    textAlign(LEFT);
+    textSize(25);
+    text("Guidelines for Admission", 915, 305);
+    textSize(16);
+    text("Your supervisor is currently in a " + s.getMoodString() + "mood.", 915, 330);
+    
+  }
 
 
 

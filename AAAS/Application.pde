@@ -14,6 +14,7 @@ public class Application{
   Standards stand = new Standards();
   String decision = "...";
   boolean appToggled = false;
+  Rulebook rules;
 
 //Word Banks
   //index of arrays: 0 = greendale, 1 = harvard, 2 = mit

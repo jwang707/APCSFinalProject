@@ -9,7 +9,8 @@ public class Acceptance{
   //constructor
   Acceptance(Application app){
     int letterPicker = (int) (Math.random()*10);
-    String letter = acceptanceLetter[letterPicker];
+    letter = acceptanceLetter[letterPicker];
+    
     if (app.getCollege() == 0){
       letter += "Greendale..?";
     }
@@ -25,6 +26,8 @@ public class Acceptance{
     noStroke();
     rect(612.5, 160, 350, 170, 7);
     fill(#ABE7F2);
-   // text(, 665, 340, 1000, 250);
+    textSize(32);
+    fill(#404E5C);
+    text(letter, 612.5, 150, 340, 100);
   }
 }

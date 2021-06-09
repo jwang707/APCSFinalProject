@@ -82,8 +82,9 @@ void draw(){
    }
    
    //for testing purposes
-   //Acceptance a = new Acceptance();
-   //a.display();
+   Application app1 = new Application(rules);
+   Acceptance a = new Acceptance(app1);
+   a.display();
     
   }
   

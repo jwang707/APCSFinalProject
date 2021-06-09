@@ -79,7 +79,11 @@ void draw(){
    for (Button b : buttons){
      b.update();
      b.display();  
-   }  
+   }
+   
+   //for testing purposes
+   //Acceptance a = new Acceptance();
+   //a.display();
     
   }
   
@@ -111,8 +115,7 @@ void mousePressed(){
 
 
 //stuff from executor class in java
- /* void compare(Application app, String college){
-    compared = true;
+void compare(Application app, String college){
     int intDecision = -1;
   //  String decision = userDecision.toLowerCase();
 
@@ -136,7 +139,6 @@ void mousePressed(){
     else{
       errorMade();
     }
-    //app.clear();
   }
   
   
@@ -192,6 +194,6 @@ void mousePressed(){
 
   }
   
-  void gameOver(){
-    System.out.println("you're fired"); //will be changed, this is just for testing purposes
-  }*/
+ void gameOver(){
+    clear();
+  }

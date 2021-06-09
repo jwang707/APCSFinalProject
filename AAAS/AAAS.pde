@@ -9,6 +9,7 @@ int backBlue = 92;
 
 boolean appToggled = false;
 boolean decMade = false;
+boolean appMade = false;
 
 //executor variables
 int errorsMade, decisionsMade, disads, numApps, numDay, errorThreshold;

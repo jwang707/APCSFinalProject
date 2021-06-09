@@ -91,9 +91,18 @@ void mousePressed(){
   }else if (state == intro){
     state = started;
   }
+  if (! decMade && appMade){
+    for (Button b : buttons){
+      if (b.type.equals("harvard") || b.type.equals("mit") || b.type.equals("greendale")){
+        if (b.hovering())  b.click(newDayButton.getApp());
+      }
+    }
+  }
   if (! decMade){
     for (Button b : buttons){
-    if (b.hovering())  b.click(newDayButton.getApp());
+      if (b.type.equals("newDay")){
+        if (b.hovering())  b.click(newDayButton.getApp());
+      }
     }
   }
   

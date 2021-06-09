@@ -83,8 +83,9 @@ public class Rulebook{
     textAlign(LEFT);
     textSize(25);
     text("Guidelines for Admission", 915, 305);
-    textSize(16);
-    text("Your supervisor is currently in a " + s.getMoodString() + "mood.", 915, 330);
+    textSize(18);
+    text("Your supervisor is currently in a " + s.getMoodString() + " mood.", 915, 330);
+    text(" - GPA >= " + s.getReqGPA(), 915, 360);
     
   }
 

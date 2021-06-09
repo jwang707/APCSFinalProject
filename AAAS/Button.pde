@@ -9,6 +9,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
   boolean clicked;
   Application app;
   boolean appExists;
+  //boolean decMade = false;
   
   Button(String name){ // constructor
     ellipseMode(CENTER);
@@ -18,11 +19,11 @@ public class Button{ // used https://processing.org/examples/button.html for hel
       cirX = 970; cirY = 60; 
       type = "harvard";
     }
-    if (name.equals("newAppButton")){
-        circleColor = color(#99FFE7);
+    if (name.equals("newDayButton")){
+      circleColor = color(#99FFE7);
       circleHighlight = color(#5CFFD9);
       cirX = 50; cirY = 350; 
-      type = "newApp";
+      type = "newDay";
     }
     if (name.equals("mit")){
       circleColor = color(#ED7D3A);
@@ -48,6 +49,10 @@ public class Button{ // used https://processing.org/examples/button.html for hel
   Application getApp(){
     return app;
   }
+  
+  String getType(){
+    return type;
+  }
 
   void display(){
     noStroke();
@@ -65,7 +70,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
       circleOver = true;
     }
     else {circleOver = false;}
-    if (clicked && type.equals("newApp")){
+    if (clicked && type.equals("newDay")){
       app.display();
       appExists = true;
     }
@@ -85,24 +90,30 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     */ // broken as for now
     
     clicked = true;
-    if (type.equals("newApp")){
+    if (type.equals("newDay")){
       rules = new Rulebook();
       app = new Application(rules);
-      //app.toggleApp(true); 
+      //app.toggleApp(true);
     }
     else{
       app = currentApp;
     }
     fill(0, 0, 0); // MINOR ISSUE HERE; if a button is pressed without an app being generated, it causes a null pointer exception
     if (type.equals("harvard")){
-        app.update("Harvard"); // problem here
-    }  
+        app.update("Harvard");
+        decMade = true;
+       // compare(app, type);
+    }
     if (type.equals("mit")){
         app.update("MIT");
-    }  
+        decMade = true;
+       // compare(app, type);
+    }
     if (type.equals("greendale")){
         app.update("Greendale");
-    }  
+        decMade = true;
+       // compare(app, type);
+    }
   }
 
 

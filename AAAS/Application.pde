@@ -139,7 +139,7 @@ public class Application{
     college = (int)(Math.random()*3);
     error = "none";
 
-  //  Standards stand = new Standards();
+    //Standards stand = new Standards();
     double minGPA = stand.getReqGPA();
     int minSAT = stand.getReqSAT();
 
@@ -320,6 +320,7 @@ public class Application{
     text("Decision: " + decision, 200, 600);
     text("For testing purposes only: Mood is " + stand.getMoodString(), 200, 650);
   }
+  
   
 
 }

@@ -117,6 +117,7 @@ void draw(){
      errorsMade = 0;
      numDay++;
      numApps += 2;
+     appsSoFar = 0;
      nextDay = false;
    }
    
@@ -140,6 +141,7 @@ void mousePressed(){
 //    System.out.println(appsSoFar);
 //    System.out.println(numApps);
     appsSoFar++;
+    decisionsMade++;
     if (appsSoFar < numApps){
       nextApp = true;
     }else{
@@ -150,6 +152,7 @@ void mousePressed(){
   if (mistake && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
     mistake = false;
     appsSoFar++;
+    decisionsMade++;
     if (appsSoFar < numApps){
       nextApp = true;
     }else{

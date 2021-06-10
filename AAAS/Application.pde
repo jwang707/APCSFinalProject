@@ -22,7 +22,7 @@ public class Application{
 
     {"Air Conditioning Repair", "Napping", "Circus Training", "Clownery",
     "Academic Dishonesty", "Fish Training", "Surfing", "Gaming", "Astrology",
-    "Costumes", "Theft", "Tomfoolery", "Moran", "Pun Creation", "Propaganda Journalism",
+    "Theoretical Phys. Ed.", "Theft", "Tomfoolery", "Moran", "Pun Creation", "Propaganda Journalism",
     "Grifting", "Vandalism", "Ladders", "Paintball", "The Physics of Slapping"},
     //TOTAL COUNT: 20
 

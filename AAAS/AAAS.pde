@@ -25,6 +25,9 @@ int disads = 0;
 int numApps = 7; //number of apps in one day
 int numDay = 1;
 int errorThreshold = 3; //number of errors for one disadulation. threshold of 3 = 2 errors allowed. 3rd one is a disad.
+int appsSoFar = 0;
+boolean nextApp = false;
+boolean nextDay = false;
 
 boolean gameOver = false;
 
@@ -42,6 +45,10 @@ Button newDayButton;
 Application app;
 Rulebook rules;
 Standards standard;
+
+
+
+//METHODS THAT MAKE THE GAME RUN
 
 void setup(){
   size(1330,756);
@@ -67,11 +74,111 @@ void draw(){
   text("y: " + mouseY, 60, 60);
   
   if (state == unstarted){
+    unstarted();
+  }else if (state == intro){
+    intro();
+  }else if(state == morning){
+    morning();
+  }else if (state == night){
+    endOfDay();
+  }else{
+    //state == day
+     if (backRed != 79){
+       backRed++;
+     } if (backGreen != 98){
+       backGreen++;
+     } if (backBlue != 114){
+       backBlue++;
+     }
+     
+   rules.display();
+   
+   for (Button b : buttons){
+     b.update();
+     b.display();
+   }
+   
+   if (accepted){
+     a.display();
+   }
+   
+   if (mistake){
+     e.display();
+   }
+    
+   if (nextApp){
+     appMade = false;
+     decMade = false;
+     nextApp = false;
+   }
+   
+   
+  }
+  
+}
+  
+void mousePressed(){
+  if (state == unstarted){
+    state = intro;
+  }else if (state == intro){
+    state = morning;
+  }else if (state == morning){
+    state = day;
+  }else if (state == night){
+    state = morning;
+  }
+  
+  if (accepted && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
+    accepted = false;
+//    System.out.println(appsSoFar);
+//    System.out.println(numApps);
+    appsSoFar++;
+    if (appsSoFar < numApps){
+      nextApp = true;
+    }else{
+      nextApp = false;
+      nextDay = true;
+    }
+  }
+  if (mistake && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
+    mistake = false;
+    appsSoFar++;
+    if (appsSoFar < numApps){
+      nextApp = true;
+    }else{
+      nextApp = false;
+      nextDay = true;
+    }
+  }
+  
+  if (! decMade && appMade){
+    for (Button b : buttons){
+      if (b.type.equals("harvard") || b.type.equals("mit") || b.type.equals("greendale")){
+        if (b.hovering())  b.click(newDayButton.getApp());
+      }
+    }
+  }
+  if (! decMade){
+    for (Button b : buttons){
+      if (b.type.equals("newDay")){
+        if (b.hovering())  b.click(newDayButton.getApp());
+      }
+    }
+  }
+  
+  rules.click(standard);
+}
+
+//VISUAL METHODS (FOR CLARITY)
+
+  void unstarted(){
     fill(183, 195, 243); // introduction stuff
     text("Absolutely Accurate Admissions Simulator", 665, 340);
     textSize(32);
     text("Click anywhere to begin", 665, 400);
-  }else if (state == intro){
+  }
+  
+  void intro(){
     fill(#EDF1F5);
     rect(665, 320, 1100, 260, 7);
     String introduction = "It is the year 2050. There are three options for higher education past high school in the United States: Harvard, MIT, and Greendale Community College. The admissions process has been streamlined. Applicants submit one document with their grades, SAT score, intended major, extracurriculars, and statement of purpose. You are the Admissions Officer. Follow the guidelines for admission. Make Harvard and MIT proud.";
@@ -80,7 +187,9 @@ void draw(){
     text(introduction, 665, 340, 1000, 250);
     fill(#EDF1F5);
     text("Click anywhere to continue", 665, 500);
-  }else if(state == morning){
+  }
+  
+  void morning(){
     fill(#EDF1F5);
     rect(665, 320, 1100, 260, 7);
     String daytime;
@@ -95,8 +204,9 @@ void draw(){
     text(daytime, 665, 395, 1000, 250);
     fill(#EDF1F5);
     text("Click anywhere to continue", 665, 500);
+  }
   
-  }else if (state == night){
+  void endOfDay(){
     fill(#EDF1F5);
     rect(665, 320, 1100, 260, 7);
     
@@ -122,74 +232,12 @@ void draw(){
     
     fill(#EDF1F5);
     text("Click anywhere to continue", 665, 500);
-  
-  
-  }else{
-     if (backRed != 79){
-       backRed++;
-     } if (backGreen != 98){
-       backGreen++;
-     } if (backBlue != 114){
-       backBlue++;
-     }
-     
-   rules.display();
-   
-   for (Button b : buttons){
-     b.update();
-     b.display();
-   }
-   
-   if (accepted){
-     a.display();
-   }
-   
-   if (mistake){
-     e.display();
-   }
-    
   }
   
-}
   
-void mousePressed(){
-  if (state == unstarted){
-    state = intro;
-  }else if (state == intro){
-    state = morning;
-  }else if (state == morning){
-    state = day;
-  }else if (state == night){
-    state = morning;
-  }
-  
-  if (accepted && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
-    accepted = false;
-  }
-  if (mistake && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
-    mistake = false;
-  }
-  
-  if (! decMade && appMade){
-    for (Button b : buttons){
-      if (b.type.equals("harvard") || b.type.equals("mit") || b.type.equals("greendale")){
-        if (b.hovering())  b.click(newDayButton.getApp());
-      }
-    }
-  }
-  if (! decMade){
-    for (Button b : buttons){
-      if (b.type.equals("newDay")){
-        if (b.hovering())  b.click(newDayButton.getApp());
-      }
-    }
-  }
-  
-  rules.click(standard);
-}
 
+//"BEHIND THE SCENES" METHODS FROM THE JAVA VERSION
 
-//stuff from executor class in java
 void compare(Application app, String college){
     int intDecision = -1;
 

@@ -301,7 +301,7 @@ public class Application{
   }
 
   void display(){
-    rules = new Rulebook();
+   // rules = new Rulebook();
     textSize(32);
     fill(255, 255, 255);
     noStroke();

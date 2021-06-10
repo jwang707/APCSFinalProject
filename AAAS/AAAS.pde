@@ -20,7 +20,10 @@ String[] acceptanceLetter = {"We are overjoyed to inform you of your acceptance 
   "Our sincerest condolences, but the only school we could fit you in was (drumroll, please...): ",
   "I hope you like college, because you’re going to "};
   // TOTAL COUNT: 10, for now!
-boolean compared;
+
+//compare method variables
+boolean accepted;
+Acceptance a;
 
 ArrayList<Button> buttons;
 Button newDayButton;
@@ -78,8 +81,12 @@ void draw(){
    
    for (Button b : buttons){
      b.update();
-     b.display();  
-   }  
+     b.display();
+   }
+   
+   if (accepted){
+     a.display();
+   }
     
   }
   
@@ -91,9 +98,23 @@ void mousePressed(){
   }else if (state == intro){
     state = started;
   }
+  
+  if (accepted && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
+    accepted = false;
+  }
+  
+  if (! decMade && appMade){
+    for (Button b : buttons){
+      if (b.type.equals("harvard") || b.type.equals("mit") || b.type.equals("greendale")){
+        if (b.hovering())  b.click(newDayButton.getApp());
+      }
+    }
+  }
   if (! decMade){
     for (Button b : buttons){
-    if (b.hovering())  b.click(newDayButton.getApp());
+      if (b.type.equals("newDay")){
+        if (b.hovering())  b.click(newDayButton.getApp());
+      }
     }
   }
   
@@ -102,12 +123,10 @@ void mousePressed(){
 
 
 //stuff from executor class in java
- /* void compare(Application app, String college){
-    compared = true;
+void compare(Application app, String college){
     int intDecision = -1;
-  //  String decision = userDecision.toLowerCase();
 
-    if (college.equals("harvard")){ // decision making will be replaced by BUTTONS in processing
+    if (college.equals("harvard")){
       intDecision = 1;
     }
     if (college.equals("greendale")){
@@ -119,15 +138,16 @@ void mousePressed(){
 
     if (intDecision == -1){ // catches bad user input, technically unnecessary but i like dissing people //should not even happen
       System.out.println("How can you call yourself an admissions officer when you can't even choose correctly?");
+      accepted = false;
       errorMade(); // runs failure
     }else  if (intDecision == app.getCollege()){
-      System.out.println("cool. cool cool cool"); //for testing purposes
-      
+      accepted = true;
+      a = new Acceptance(app);
     }
     else{
+      accepted = false;
       errorMade();
     }
-    //app.clear();
   }
   
   
@@ -183,6 +203,6 @@ void mousePressed(){
 
   }
   
-  void gameOver(){
-    System.out.println("you're fired"); //will be changed, this is just for testing purposes
-  }*/
+ void gameOver(){
+    clear();
+  }

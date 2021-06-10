@@ -47,8 +47,6 @@ Application app;
 Rulebook rules;
 Standards standard;
 
-
-
 //METHODS THAT MAKE THE GAME RUN
 
 void setup(){
@@ -93,7 +91,7 @@ void draw(){
      }
      
    rules.display();
-   
+
    for (Button b : buttons){
      b.update();
      b.display();
@@ -106,6 +104,8 @@ void draw(){
    if (mistake){
      e.display();
    }
+   
+   rules.update();
     
    if (nextApp){
      appMade = false;

@@ -5,6 +5,7 @@ public class Acceptance{
   "Our sincerest condolences, but the only school we could fit you in was (drumroll, please...): ",
   "I hope you like college, because you’re going to "};
   String letter;
+  boolean clicked = false;
   
   //constructor
   Acceptance(Application app){
@@ -23,11 +24,12 @@ public class Acceptance{
   }
   
   void display(){
-    noStroke();
-    rect(612.5, 160, 350, 170, 7);
-    fill(#ABE7F2);
-    textSize(32);
-    fill(#404E5C);
-    text(letter, 612.5, 150, 340, 100);
+      noStroke();
+      fill(#ABE7F2);
+      rect(612.5, 160, 350, 170, 7);
+      textSize(32);
+      fill(#404E5C);
+      text(letter, 612.5, 150, 320, 100);
   }
+
 }

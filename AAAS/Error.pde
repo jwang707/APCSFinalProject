@@ -12,7 +12,6 @@ public class Error{
       textAlign(CENTER, CENTER);
       fill(#B85644);
       text(errorMsg, 612.5, 140, 320, 150);
-      System.out.println(errorMsg);
       textSize(16);
       textAlign(CENTER, CENTER);
       fill(#B85644);

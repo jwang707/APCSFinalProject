@@ -121,11 +121,26 @@ void draw(){
      nextDay = false;
    }
    
+   if (gameOver){
+     clear();
+     
+     textSize(48);
+     fill(#ED0509);
+     text("Three strikes and you're out! You're FIRED!", 665, 377.5, 1200, 700);
+     textSize(28);
+     text("Click anywhere to exit.", 665, 700);
+     
+   }
+   
   }
   
 }
   
 void mousePressed(){
+  if (gameOver){
+    exit();
+  }
+  
   if (state == unstarted){
     state = intro;
   }else if (state == intro){
@@ -177,6 +192,8 @@ void mousePressed(){
   }
   
   rules.click(standard);
+  
+  
 }
 
 //VISUAL METHODS (FOR CLARITY)
@@ -323,5 +340,5 @@ void compare(Application app, String college){
   }
   
  void gameOver(){
-    clear();
+   gameOver = true;
   }

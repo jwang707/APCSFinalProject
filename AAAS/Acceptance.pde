@@ -25,10 +25,10 @@ public class Acceptance{
   
   void display(){
       noStroke();
-      fill(#ABE7F2);
+      fill(#f5f2e0);
       rect(612.5, 160, 350, 170, 7);
       textSize(32);
-      fill(#404E5C);
+      fill(#B85644);
       text(letter, 612.5, 150, 320, 100);
   }
 

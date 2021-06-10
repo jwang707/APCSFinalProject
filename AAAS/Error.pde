@@ -12,6 +12,10 @@ public class Error{
       textAlign(CENTER, CENTER);
       fill(#B85644);
       text(errorMsg, 612.5, 160, 320, 150);
+      textSize(16);
+      textAlign(CENTER, CENTER);
+      fill(#B85644);
+      text("\nClick on this sticker to continue.", 612.5, 220, 320, 100);
   }
 
 }

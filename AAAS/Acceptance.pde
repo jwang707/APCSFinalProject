@@ -3,9 +3,8 @@ public class Acceptance{
   "As expected, you got into ", "Is this even a surprise? You got into ", "For the next four years, you will be attending ",
   "Get excited, because you’ve been accepted to ", "Let’s just get it over with. Welcome to ", "Ring the alarm bells! You got into ",
   "Our sincerest condolences, but the only school we could fit you in was (drumroll, please...): ",
-  "I hope you like college, because you’re going to "};
+  "I hope you like college, because you’re going to "}; //total count: 10 (for now)
   String letter;
-  boolean clicked = false;
   
   //constructor
   Acceptance(Application app){
@@ -27,9 +26,10 @@ public class Acceptance{
       noStroke();
       fill(#f5f2e0);
       rect(612.5, 160, 350, 170, 7);
-      textSize(32);
+      textSize(28);
+      textAlign(CENTER, CENTER);
       fill(#B85644);
-      text(letter, 612.5, 150, 320, 100);
+      text(letter, 612.5, 160, 320, 150);
   }
 
 }

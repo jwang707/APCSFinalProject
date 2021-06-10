@@ -14,16 +14,15 @@ boolean appMade = false;
 //executor variables
 int errorsMade, decisionsMade, disads, numApps, numDay, errorThreshold;
 boolean gameOver = false;
-String[] acceptanceLetter = {"We are overjoyed to inform you of your acceptance to ", "Hey, congrats, you got into ",
-  "As expected, you got into ", "Is this even a surprise? You got into ", "For the next four years, you will be attending ",
-  "Get excited, because you’ve been accepted to ", "Let’s just get it over with. Welcome to ", "Ring the alarm bells! You got into ",
-  "Our sincerest condolences, but the only school we could fit you in was (drumroll, please...): ",
-  "I hope you like college, because you’re going to "};
-  // TOTAL COUNT: 10, for now!
 
 //compare method variables
 boolean accepted;
 Acceptance a;
+
+//error variables
+String errorMsg;
+boolean mistake;
+Error e = new Error();
 
 ArrayList<Button> buttons;
 Button newDayButton;
@@ -87,6 +86,10 @@ void draw(){
    if (accepted){
      a.display();
    }
+   
+   if (mistake){
+     e.display();
+   }
     
   }
   
@@ -101,6 +104,9 @@ void mousePressed(){
   
   if (accepted && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
     accepted = false;
+  }
+  if (mistake && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
+    mistake = false;
   }
   
   if (! decMade && appMade){
@@ -136,11 +142,7 @@ void compare(Application app, String college){
       intDecision = 2;
     }
 
-    if (intDecision == -1){ // catches bad user input, technically unnecessary but i like dissing people //should not even happen
-      System.out.println("How can you call yourself an admissions officer when you can't even choose correctly?");
-      accepted = false;
-      errorMade(); // runs failure
-    }else  if (intDecision == app.getCollege()){
+    if (intDecision == app.getCollege()){
       accepted = true;
       a = new Acceptance(app);
     }
@@ -153,6 +155,7 @@ void compare(Application app, String college){
   
   void errorMade(){
     errorsMade++;
+    mistake = true;
 
     if (disads == 3){
       gameOver();
@@ -160,16 +163,16 @@ void compare(Application app, String college){
 
     else if (errorThreshold == 1 && errorsMade == errorThreshold){
       disads++;
-      System.out.println("We expected perfection, but you made a mistake. No. You ARE the mistake. Do better.");
+      errorMsg = "We expected perfection, but you made a mistake. No. You ARE the mistake. Do better.";
 
       if (disads == 1){
-        System.out.println("You have received a disadulation. You now have " + disads + " disadulation. Three disadulations and you're fired!");
+        errorMsg += "\nYou have received a disadulation. You now have " + disads + " disadulation. Three disadulations and you're fired!";
       }
       else if (disads == 3){
         gameOver();
       }
       else{
-        System.out.println("You have received a disadulation. You now have " + disads + " disadulations. Three disadulations and you're fired!");
+        errorMsg += "\nYou have received a disadulation. You now have " + disads + " disadulations. Three disadulations and you're fired!";
       }
 
       errorsMade = 0;
@@ -179,13 +182,13 @@ void compare(Application app, String college){
       disads++;
 
       if (disads == 1){
-        System.out.println("Tut tut. You've made " + errorThreshold + " mistakes. That's a disadulation! You now have " + disads + " disadulation. Three disadulations and you're fired!");
+        errorMsg = "Tut tut. You've made " + errorThreshold + " mistakes. That's a disadulation! You now have " + disads + " disadulation. Three disadulations and you're fired!";
       }
       else if (disads == 3){
         gameOver();
       }
       else{
-        System.out.println("Tut tut. You've made " + errorThreshold + " mistakes. That's a disadulation! You now have " + disads + " disadulations. Three disadulations and you're fired!");
+        errorMsg = "Tut tut. You've made " + errorThreshold + " mistakes. That's a disadulation! You now have " + disads + " disadulations. Three disadulations and you're fired!";
       }
 
       errorsMade = 0;
@@ -193,12 +196,12 @@ void compare(Application app, String college){
 
     else{
       if (errorsMade == 1){
-        System.out.println("You did a bad job. Be sad. You now have " + errorsMade + " mistake.");
+        errorMsg = "You did a bad job. Be sad. You now have " + errorsMade + " mistake.";
       }else{
-        System.out.println("You did a bad job. Be sad. You now have " + errorsMade + " mistakes.");
+        errorMsg = "You did a bad job. Be sad. You now have " + errorsMade + " mistakes.";
       }
 
-      System.out.println("This is a written warning. If you make " + errorThreshold + " mistakes today, you will receive a full disadulation.");
+      errorMsg += "\nThis is a written warning. If you make " + errorThreshold + " mistakes today, you will receive a full disadulation.";
     }
 
   }

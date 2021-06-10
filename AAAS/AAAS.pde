@@ -114,6 +114,10 @@ void draw(){
    
    if (nextDay){
      state = night;
+     errorsMade = 0;
+     numDay++;
+     numApps += 2;
+     nextDay = false;
    }
    
   }
@@ -212,10 +216,6 @@ void mousePressed(){
   void endOfDay(){
     fill(#EDF1F5);
     rect(665, 320, 1100, 260, 7);
-    
-    errorsMade = 0;
-    numDay++;
-    numApps += 2;
     
     textSize(32);
     fill(#404E5C);

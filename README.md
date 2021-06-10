@@ -36,3 +36,6 @@ Did a good chunk of work today in Processing, adding buttons including one that 
 
 6/6/21
 Started adding the rulebook; made it flippable and started to detail some of the buttons.
+
+6/9/21
+Finished rulebook (fully workable with Standards), fixed around some general visual aspects, and worked on making the decisions final (once a decision is made it can't be changed)/application generator not abusable during class with Nour.

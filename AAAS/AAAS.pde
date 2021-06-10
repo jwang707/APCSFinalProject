@@ -12,7 +12,13 @@ boolean decMade = false;
 boolean appMade = false;
 
 //executor variables
-int errorsMade, decisionsMade, disads, numApps, numDay, errorThreshold;
+int errorsMade = 0;
+int decisionsMade = 0; //total number of decisions made accross all days
+int disads = 0;
+int numApps = 7; //number of apps in one day
+int numDay = 1;
+int errorThreshold = 3; //number of errors for one disadulation. threshold of 3 = 2 errors allowed. 3rd one is a disad.
+
 boolean gameOver = false;
 
 //compare method variables

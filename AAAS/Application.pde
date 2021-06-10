@@ -305,6 +305,7 @@ public class Application{
     textSize(32);
     fill(255, 255, 255);
     noStroke();
+    rectMode(CENTER);
     rect(460, 375, 700, 650, 7);
     fill(0, 0, 0);
     textAlign(LEFT);

@@ -319,7 +319,7 @@ public class Application{
     text("Statement: ", 200, 480);
     text(statement, 525, 564.5, 400, 200);
     text("Decision: " + decision, 200, 600);
-    text("For testing purposes only: Mood is " + stand.getMoodString(), 200, 650);
+    //text("For testing purposes only: Mood is " + stand.getMoodString(), 200, 650);
   }
   
   

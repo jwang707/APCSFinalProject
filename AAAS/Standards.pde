@@ -5,8 +5,17 @@ public class Standards{
   int moodTextNum;
   
   String[][] moodText = {
-    {"Your supervisor tripped over their shoelaces.", "Your supervisor got dumped.", "Your supervisor stepped in gum...", "Your supervisor's kid got suspended from school."}, // bad mood text
-    {"Your supervisor found $100 on the street.", "Your supervisor appears to have found love.", "Honestly, they've just decided to be happy."} // good mood text
+    {"Your supervisor tripped over their shoelaces.", "Your supervisor got dumped.", "Your supervisor stepped in gum...", "Your supervisor's kid got suspended from school.", 
+    "Your supervisor was clawed by their cat.", "Your supervisor's train was late by an hour.", "Your supervisor was attacked by a squirrel.", "Your supervisor's Starbucks order was wrong.",
+    "Your supervisor's daughter was admitted to Greendale.", "Your supervisor put their pants on backwards.", "Your supervisor is wearing mismatching socks.", "Your supervisor has food stuck in their teeth",
+    "Your supervisor's ice cream was eaten by their children last night.", "Your supervisor just went through an intervention for their gambling problem.", "Your supervisor is having an existential crisis.",
+    "Your supervisor just watched Bo Burnham's 'Inside'.", "Your supervisor listened to 'Threnody to the Victims of Hiroshima.'", "Your supervisor is having a bad hair day.", "Your supervisor is being supervised.",
+    "Your supervisor lost money playing poker.", "Your supervisor lost money at the casino.", "Your supervisor has a chronic gambling addiction."}, // bad mood text
+    
+    {"Your supervisor found $100 on the street.", "Your supervisor appears to have found love.", "Honestly, they've just decided to be happy.", "Your supervisor is wearing his lucky tie.",
+    "Your supervisor just had a great meal.", "Your supervisor won $200 in the lotto! (No bonus for you)", "Your supervisor looks great today.", "There's a substitute supervisor on duty.",
+    "Your supervisor won money at the casino last night.", "Your supervisor's USB plugged in the right way the first time.", "Your supervisor watched John Mulaney.", "Your supervisor is humming 'Caramelldansen.'",
+    "Your supervisor's kid got an 100 on their APCS project (wink)."} // good mood text
   };
 
   public Standards(){

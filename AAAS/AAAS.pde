@@ -69,8 +69,8 @@ void draw(){
   rectMode(CENTER);
   textAlign(CENTER);
   
-  text("x: " + mouseX, 60, 30);
-  text("y: " + mouseY, 60, 60);
+  //text("x: " + mouseX, 60, 30);
+  //text("y: " + mouseY, 60, 60);
   
   if (state == unstarted){
     unstarted();

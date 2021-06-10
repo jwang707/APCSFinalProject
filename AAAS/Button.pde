@@ -16,7 +16,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     if (name.equals("harvard")){ // harvard button!
       circleColor = color(164, 16, 52);
       circleHighlight = color(77, 8, 25);
-      cirX = 970; cirY = 60; 
+      cirX = 970; cirY = 60;
       type = "harvard";
     }
     if (name.equals("newDayButton")){
@@ -55,6 +55,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
   }
 
   void display(){
+    
     noStroke();
     if (circleOver){
       fill(circleHighlight);
@@ -63,6 +64,30 @@ public class Button{ // used https://processing.org/examples/button.html for hel
       fill(circleColor);
     }
     ellipse(cirX, cirY, size, size);
+    
+    if (hovering()){
+      if (type.equals("harvard")){
+        textSize(64);
+        textAlign(CENTER, CENTER);
+        fill(#FFFFFF);
+        text("H", cirX, cirY);
+      }
+      if (type.equals("mit")){
+        textSize(64);
+        textAlign(CENTER, CENTER);
+        fill(#FFFFFF);
+        text("M", cirX, cirY);
+      }
+      if (type.equals("greendale")){
+        textSize(64);
+        textAlign(CENTER, CENTER);
+        fill(#ffffff);
+        text("G", cirX, cirY);
+      }
+    }
+    
+    
+    
   }
   
   void update(){
@@ -79,7 +104,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
   boolean hovering(){
     float disX = cirX - mouseX;
     float disY = cirY - mouseY;
-    return (sqrt(sq(disX) + sq(disY)) < size/2);
+    return (sqrt(sq(disX) + sq(disY)) < size/2);  
   }
   
   void click(Application currentApp){ /*

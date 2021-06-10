@@ -1,6 +1,9 @@
 int unstarted = 0;
 int intro = 1;
 int started = 2;
+int morning = 3;
+int day = 4;
+int night = 5;
 int state = unstarted;
 
 int backRed = 64;
@@ -10,6 +13,10 @@ int backBlue = 92;
 boolean appToggled = false;
 boolean decMade = false;
 boolean appMade = false;
+
+//morning + night variables
+String gm = "Good morning! Time for you to get to work.";
+String gn = "Congrats! You reached your daily quota. Go home and get some rest before coming back tomorrow to ruin more teenagers' lives!";
 
 //executor variables
 int errorsMade = 0;
@@ -73,6 +80,50 @@ void draw(){
     text(introduction, 665, 340, 1000, 250);
     fill(#EDF1F5);
     text("Click anywhere to continue", 665, 500);
+  }else if(state == morning){
+    fill(#EDF1F5);
+    rect(665, 320, 1100, 260, 7);
+    String daytime;
+    if (errorThreshold == 1){
+      daytime = "\nToday is Day " + numDay + ". You will be given " + numApps + " applications to review. You will receive a disadulation for every " + errorThreshold + " mistake you make today.";
+    }else{
+      daytime = "\nToday is Day " + numDay + ". You will be given " + numApps + " applications to review. You will receive a disadulation for every " + errorThreshold + " mistakes you make today.";
+    }
+    textSize(32);
+    fill(#404E5C);
+    text(gm, 665, 395, 1000, 250);
+    text(daytime, 665, 395, 1000, 250);
+    fill(#EDF1F5);
+    text("Click anywhere to continue", 665, 500);
+  
+  }else if (state == night){
+    fill(#EDF1F5);
+    rect(665, 320, 1100, 260, 7);
+    
+    errorsMade = 0;
+    numDay++;
+    numApps += 2;
+    
+    textSize(32);
+    fill(#404E5C);
+    text(gn, 665, 395, 1000, 250);
+    
+    String newDisad;
+    if (errorThreshold > 1 && numDay % 3 == 0){
+      errorThreshold--;
+      if (errorThreshold==1){
+        newDisad = "You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, we expect perfection. You will receive a disadulation as soon as you make a mistake.";
+        text(newDisad, 665, 395, 1000, 250);
+      }else{
+        newDisad = "You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make " + errorThreshold + " mistakes, you will receive a disadulation!";
+        text(newDisad, 665, 395, 1000, 250);
+      }
+    }
+    
+    fill(#EDF1F5);
+    text("Click anywhere to continue", 665, 500);
+  
+  
   }else{
      if (backRed != 79){
        backRed++;
@@ -105,7 +156,11 @@ void mousePressed(){
   if (state == unstarted){
     state = intro;
   }else if (state == intro){
-    state = started;
+    state = morning;
+  }else if (state == morning){
+    state = day;
+  }else if (state == night){
+    state = morning;
   }
   
   if (accepted && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){

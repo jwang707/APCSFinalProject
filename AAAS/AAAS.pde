@@ -238,6 +238,7 @@ void mousePressed(){
     
     fill(#EDF1F5);
     text("Click anywhere to continue", 665, 500);
+    nextApp = true;
   }
   
   

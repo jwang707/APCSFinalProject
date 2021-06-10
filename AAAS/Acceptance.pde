@@ -25,11 +25,11 @@ public class Acceptance{
   void display(){
       noStroke();
       fill(#f5f2e0);
-      rect(612.5, 160, 350, 170, 7);
+      rect(585, 160, 400, 170, 7);
       textSize(28);
       textAlign(CENTER, CENTER);
       fill(#B85644);
-      text(letter, 612.5, 160, 320, 150);
+      text(letter, 585, 160, 360, 150);
       textSize(16);
       textAlign(CENTER, CENTER);
       fill(#B85644);

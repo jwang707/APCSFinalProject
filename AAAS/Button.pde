@@ -19,11 +19,11 @@ public class Button{ // used https://processing.org/examples/button.html for hel
       cirX = 970; cirY = 60;
       type = "harvard";
     }
-    if (name.equals("newDayButton")){
+    if (name.equals("newAppButton")){
       circleColor = color(#99FFE7);
       circleHighlight = color(#5CFFD9);
       cirX = 50; cirY = 350; 
-      type = "newDay";
+      type = "newApp";
     }
     if (name.equals("mit")){
       circleColor = color(#ED7D3A);
@@ -95,7 +95,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
       circleOver = true;
     }
     else {circleOver = false;}
-    if (clicked && type.equals("newDay")){
+    if (clicked && type.equals("newApp")){
       app.display();
       appExists = true;
     }
@@ -115,7 +115,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     */ // broken as for now
     
     clicked = true;
-    if (type.equals("newDay") && ! appMade){
+    if (type.equals("newApp") && ! appMade){
       rules = new Rulebook();
       app = new Application(rules);
       appMade = true;

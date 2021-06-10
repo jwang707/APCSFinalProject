@@ -41,7 +41,7 @@ boolean mistake;
 Error e = new Error();
 
 ArrayList<Button> buttons;
-Button newDayButton;
+Button newAppButton;
 Application app;
 Rulebook rules;
 Standards standard;
@@ -53,9 +53,9 @@ Standards standard;
 void setup(){
   size(1330,756);
   buttons = new ArrayList<Button>();
-  newDayButton = new Button("newDayButton");
+  newAppButton = new Button("newAppButton");
   buttons.add(new Button("harvard"));
-  buttons.add(newDayButton);
+  buttons.add(newAppButton);
   buttons.add(new Button("mit"));
   buttons.add(new Button("greendale"));
   rules = new Rulebook();
@@ -112,6 +112,9 @@ void draw(){
      nextApp = false;
    }
    
+   if (nextDay){
+     state = night;
+   }
    
   }
   
@@ -154,14 +157,14 @@ void mousePressed(){
   if (! decMade && appMade){
     for (Button b : buttons){
       if (b.type.equals("harvard") || b.type.equals("mit") || b.type.equals("greendale")){
-        if (b.hovering())  b.click(newDayButton.getApp());
+        if (b.hovering())  b.click(newAppButton.getApp());
       }
     }
   }
   if (! decMade){
     for (Button b : buttons){
-      if (b.type.equals("newDay")){
-        if (b.hovering())  b.click(newDayButton.getApp());
+      if (b.type.equals("newApp")){
+        if (b.hovering())  b.click(newAppButton.getApp());
       }
     }
   }

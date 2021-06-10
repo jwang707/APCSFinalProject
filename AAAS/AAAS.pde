@@ -99,7 +99,7 @@ void mousePressed(){
     state = started;
   }
   
-  if (accepted){
+  if (accepted && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
     accepted = false;
   }
   

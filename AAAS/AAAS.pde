@@ -30,6 +30,9 @@ boolean nextApp = false;
 boolean nextDay = false;
 boolean thresholdChanged = false;
 
+boolean raging = false;
+int rageLevel = 0;
+
 boolean gameOver = false;
 
 //compare method variables
@@ -57,6 +60,8 @@ void setup(){
   buttons.add(newAppButton);
   buttons.add(new Button("mit"));
   buttons.add(new Button("greendale"));
+  buttons.add(new Button("rage"));
+  buttons.add(new Button("confetti"));
   rules = new Rulebook();
   standard = rules.getStandards();
 }
@@ -133,6 +138,19 @@ void draw(){
      
    }
    
+   if (raging){
+     if (rageLevel < 150){
+       rageLevel++;
+     }
+     if (rageLevel == 150){
+       raging = false;
+       rageLevel = 0;
+     }
+     fill(#ff0000, rageLevel);
+     rectMode(CORNERS);
+     rect(0, 0, 2000, 2000);
+   }
+   
   }
   
 }
@@ -175,6 +193,11 @@ void mousePressed(){
         } 
       }
     }
+    
+    if (!raging && b.hovering() && standard.getMood() == -1){
+      raging = true;
+    }
+    
   }
   
  /* if (accepted && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
@@ -311,6 +334,23 @@ void mousePressed(){
     fill(#EDF1F5);
     text("Click anywhere to continue", 665, 500);
     nextApp = true;
+  }
+  
+  void rageAgainstTheMachine(){
+    for (int i = 0; i < 120; i++){
+        if (i < 60){
+          fill(#ff0000, 0+i);
+          rectMode(CORNERS);
+          rect(0, 0, 2000, 2000);
+        }
+        else{
+          fill(#ff0000, 120-i);
+          rectMode(CORNERS);
+          rect(0, 0, 2000, 2000);
+        }
+      
+      }
+      raging = false;
   }
   
   

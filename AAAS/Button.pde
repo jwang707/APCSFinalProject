@@ -8,7 +8,8 @@ public class Button{ // used https://processing.org/examples/button.html for hel
   String type;
   boolean clicked;
   Application app;
-  boolean appExists;
+  boolean moody = false;
+  //boolean appExists;
   //boolean decMade = false;
   
   Button(String name){ // constructor
@@ -37,6 +38,22 @@ public class Button{ // used https://processing.org/examples/button.html for hel
       cirX = 1170; cirY = 60; 
       type = "greendale";
     }
+    if (name.equals("rage")){
+      circleColor = color(#000000);
+      circleHighlight = color(#303030);
+      cirX = 1070; cirY = 180;
+      size = 120;
+      type = "rage";
+      moody = true;
+    }
+    if (name.equals("confetti")){
+      circleColor = color(#000000);
+      circleHighlight = color(#303030);
+      cirX = 1070; cirY = 180;
+      size = 120;
+      type = "confetti";
+      moody = true;
+    }
   }
   
   Button(){ // uhh don't need this i think
@@ -63,7 +80,10 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     else{
       fill(circleColor);
     }
-    ellipse(cirX, cirY, size, size);
+    
+    if (!moody || standard.getMood() != 0){ // if normal kind of button OR the mood is bad/good 
+      ellipse(cirX, cirY, size, size);
+    }
     
     if (hovering()){
       if (type.equals("harvard")){
@@ -84,6 +104,12 @@ public class Button{ // used https://processing.org/examples/button.html for hel
         fill(#ffffff);
         text("G", cirX, cirY);
       }
+      if (moody && standard.getMood() != 0){
+        textSize(64);
+        textAlign(CENTER, CENTER);
+        fill(#ffffff);
+        text("?", cirX, cirY);
+      }
     }
     
     
@@ -97,7 +123,6 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     else {circleOver = false;}
     if (clicked && type.equals("newApp")){
       app.display();
-      appExists = true;
     }
   }
 
@@ -107,13 +132,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     return (sqrt(sq(disX) + sq(disY)) < size/2);  
   }
   
-  void click(Application currentApp){ /*
-    if (appExists){
-      text("true", 800, 650);
-    }
-    else{text("false", 800, 700);}
-    */ // broken as for now
-    
+  void click(Application currentApp){
     clicked = true;
     if (type.equals("newApp") && ! appMade){
       rules = new Rulebook();
@@ -140,6 +159,11 @@ public class Button{ // used https://processing.org/examples/button.html for hel
         decMade = true;
         compare(app, type);
     }
+    
+    if (type.equals("rage")){
+      raging = true;
+    }
+    
   }
 
 

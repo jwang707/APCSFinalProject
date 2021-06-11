@@ -241,24 +241,26 @@ void mousePressed(){
     
     textSize(32);
     fill(#404E5C);
-    text(gn, 665, 395, 1000, 250);
+    text(gn, 665, 340, 1000, 250);
     
-    String newDisad;
-    if (numDay % 3 == 0 && errorThreshold == 2 && ! thresholdChanged){
-      System.out.println("hi");
+    String newDisad = "";
+    if (numDay % 1 == 0 && errorThreshold == 2 && ! thresholdChanged){
        errorThreshold = 1;
        newDisad = "You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, we expect perfection. You will receive a disadulation as soon as you make a mistake.";
-       fill(#404E5C);
-       text(newDisad, 665, 395, 1000, 250);
        thresholdChanged = true;
-    }else if (numDay % 3 == 0 && errorThreshold == 3 && ! thresholdChanged) {
-      System.out.println("hello");
-        errorThreshold = 2;
-        newDisad = "You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make 2 mistakes, you will receive a disadulation!";
-        fill(#404E5C);
-        text(newDisad, 665, 395, 1000, 250);
-        thresholdChanged = true;
+    }else if (numDay % 1 == 0 && errorThreshold == 3 && ! thresholdChanged) {
+       errorThreshold = 2;
+       newDisad = "You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make 2 mistakes, you will receive a disadulation!";
+       thresholdChanged = true;
     }
+    
+    if (numDay % 1 == 0 && errorThreshold == 1){
+      newDisad = "You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, we expect perfection. You will receive a disadulation as soon as you make a mistake.";
+    }else if (numDay % 1 == 0 && errorThreshold == 2){
+      newDisad = "You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make 2 mistakes, you will receive a disadulation!";
+    }
+    fill(#404E5C);
+    text(newDisad, 665, 450, 1000, 200);
     
     fill(#EDF1F5);
     text("Click anywhere to continue", 665, 500);

@@ -6,6 +6,21 @@ Absolutely Accurate Admissions Simulator
 
 Proposal: https://docs.google.com/document/d/1oyPPoz8RnCR7FU4K3PSLNvjDRoJHhUrLgNEBKkHn8nk/edit?usp=sharing
 
+COMPILE/RUN INSTRUCTIONS
+> Must open + run the AAAS file in Processing in order to start the game.
+
+GAME INSTRUCTIONS/TIPS
+> Instructions for moving through applications and days are included inside the game, as are the rules of how to decide whether to send the applicant to Harvard or MIT, or to ruin their life—sorry, send them to Greendale Community College.
+> Reminders:
+    > Errors reset at the start of every day. Disadulations do not.
+    > The number of errors left until you get a disadulation is listed in the Counter box.
+    > You are stuck in this job until you get three disadulations and get fired. If you are amazingly good at this game, it will never end. 
+> Tip: Make sure to check the rulebook for every application! Your supervisor is very moody, so the guidelines for admission will change frequently.
+> Additional fun features that the user can discover:
+   > Go to the "Guidelines for Admission" page of the rulebook. If the first statement says, "Your supervisor is currently in a [good/bad] mood," then we suggest you hover over the text for an entertaining surprise!
+   > Click on the black buttons labelled "?" for another cool surprise!
+
+
 DEVELOPMENT LOGS
 
 Nour:
@@ -41,6 +56,7 @@ Did some testing and debugging.
 Debugging.
 Made it so that to move on to the next application, you just have to click the generate app button, not go through the sticker etc.
 Added counters that display to show things like what day it is, how many applications you have left in a day, etc.
+Made SAT and GPA generators generate higher scores in order to make the changing standards/mood more relevant and the game harder.
 
 Jasmine:
 5/24/21 - 5/25/21

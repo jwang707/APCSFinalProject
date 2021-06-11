@@ -244,19 +244,19 @@ void mousePressed(){
     text(gn, 665, 340, 1000, 250);
     
     String newDisad = "";
-    if (numDay % 1 == 0 && errorThreshold == 2 && ! thresholdChanged){
+    if (numDay % 3 == 0 && errorThreshold == 2 && ! thresholdChanged){
        errorThreshold = 1;
        newDisad = "You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, we expect perfection. You will receive a disadulation as soon as you make a mistake.";
        thresholdChanged = true;
-    }else if (numDay % 1 == 0 && errorThreshold == 3 && ! thresholdChanged) {
+    }else if (numDay % 3 == 0 && errorThreshold == 3 && ! thresholdChanged) {
        errorThreshold = 2;
        newDisad = "You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make 2 mistakes, you will receive a disadulation!";
        thresholdChanged = true;
     }
     
-    if (numDay % 1 == 0 && errorThreshold == 1){
+    if (numDay % 3 == 0 && errorThreshold == 1){
       newDisad = "You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, we expect perfection. You will receive a disadulation as soon as you make a mistake.";
-    }else if (numDay % 1 == 0 && errorThreshold == 2){
+    }else if (numDay % 3 == 0 && errorThreshold == 2){
       newDisad = "You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make 2 mistakes, you will receive a disadulation!";
     }
     fill(#404E5C);

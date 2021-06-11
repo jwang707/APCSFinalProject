@@ -23,7 +23,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     if (name.equals("newAppButton")){
       circleColor = color(#99FFE7);
       circleHighlight = color(#5CFFD9);
-      cirX = 50; cirY = 350; 
+      cirX = 53; cirY = 350; 
       type = "newApp";
     }
     if (name.equals("mit")){
@@ -41,17 +41,17 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     if (name.equals("rage")){
       circleColor = color(#000000);
       circleHighlight = color(#303030);
-      cirX = 1070; cirY = 180;
-      size = 120;
+      cirX = 53; cirY = 180;
+      size = 90;
       type = "rage";
       moody = true;
     }
-    if (name.equals("confetti")){
+    if (name.equals("disco")){
       circleColor = color(#000000);
       circleHighlight = color(#303030);
-      cirX = 1070; cirY = 180;
-      size = 120;
-      type = "confetti";
+      cirX = 53; cirY = 180;
+      size = 90;
+      type = "disco";
       moody = true;
     }
   }
@@ -163,6 +163,9 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     
     if (type.equals("rage")){
       raging = true;
+    }
+    if (type.equals("disco")){
+      disco = true;
     }
     
   }

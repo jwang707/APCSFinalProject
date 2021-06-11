@@ -34,6 +34,9 @@ boolean thresholdChanged = false;
 boolean raging = false;
 int rageLevel = 0;
 
+boolean disco = false;
+int discoTime = 0;
+
 boolean gameOver = false;
 
 //compare method variables
@@ -62,7 +65,7 @@ void setup(){
   buttons.add(new Button("mit"));
   buttons.add(new Button("greendale"));
   buttons.add(new Button("rage"));
-  buttons.add(new Button("confetti"));
+  buttons.add(new Button("disco"));
   rules = new Rulebook();
   standard = rules.getStandards();
 }
@@ -154,8 +157,41 @@ void draw(){
      rect(0, 0, 2000, 2000);
    }
    
-  }
-  
+   if (disco){
+     if (discoTime < 360){
+       discoTime++;
+     }
+     if (discoTime == 360){
+       disco = false;
+       discoTime = 0;
+     }
+     if (discoTime < 30){
+       fill(#0fc0fc, 60);
+       rectMode(CORNERS);
+       rect(0, 0, 2000, 2000);
+     }
+     else if (discoTime < 60){
+       fill(#7B1DAF, 60);
+       rectMode(CORNERS);
+       rect(0, 0, 2000, 2000);
+     }
+     else if (discoTime < 90){
+       fill(#FF2FB9, 60);
+       rectMode(CORNERS);
+       rect(0, 0, 2000, 2000);
+     }
+     else if (discoTime < 120){
+       fill(#D4FF47, 60);
+       rectMode(CORNERS);
+       rect(0, 0, 2000, 2000);
+     }
+     else if (discoTime < 150){
+       fill(#1B3649, 60);
+       rectMode(CORNERS);
+       rect(0, 0, 2000, 2000);
+     }
+   }
+  } 
 }
   
 void mousePressed(){
@@ -200,6 +236,9 @@ void mousePressed(){
     
     if (!raging && b.hovering() && standard.getMood() == -1){
       raging = true;
+    }
+    if (!disco && b.hovering() && standard.getMood() == 1){
+      disco = true;
     }
     
   }

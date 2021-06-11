@@ -171,7 +171,7 @@ void draw(){
        rect(0, 0, 2000, 2000);
      }
      else if (discoTime < 60){
-       fill(#7B1DAF, 60);
+       fill(#D4FF47, 60);
        rectMode(CORNERS);
        rect(0, 0, 2000, 2000);
      }
@@ -181,12 +181,12 @@ void draw(){
        rect(0, 0, 2000, 2000);
      }
      else if (discoTime < 120){
-       fill(#D4FF47, 60);
+       fill(#7B1DAF, 60);
        rectMode(CORNERS);
        rect(0, 0, 2000, 2000);
      }
      else if (discoTime < 150){
-       fill(#1B3649, 60);
+       fill(#FFDC40, 60);
        rectMode(CORNERS);
        rect(0, 0, 2000, 2000);
      }

@@ -33,7 +33,7 @@ public class Acceptance{
       textSize(16);
       textAlign(CENTER, CENTER);
       fill(#B85644);
-      text("\nClick on this sticker to continue.", 612.5, 220, 320, 100);
+      text("\nClick on the blue button to continue.", 585, 220, 360, 100);
   }
 
 }

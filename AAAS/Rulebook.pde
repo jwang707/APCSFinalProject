@@ -73,7 +73,7 @@ public class Rulebook{
       text("MIT", 1080, 460);
       text("Greendale", 1160, 460);
       textSize(22);
-      text("Use buttons to determine college. \n Follow standards as set by your \n supervisor's mood (See next page.)\n \n Repeated failure to follow these \n guidelines will result in disadulations.", 1083, 520);  
+      text("Use buttons to determine college. \n Follow standards as set by your \n supervisor's mood (see next page).\n \n Repeated failure to follow these \n guidelines will result in disadulations.", 1083, 520);  
       textAlign(LEFT);      
       textSize(18);
       text("Click to receive application", 1010, 350);

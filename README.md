@@ -7,9 +7,11 @@ Absolutely Accurate Admissions Simulator
 Proposal: https://docs.google.com/document/d/1oyPPoz8RnCR7FU4K3PSLNvjDRoJHhUrLgNEBKkHn8nk/edit?usp=sharing
 
 COMPILE/RUN INSTRUCTIONS
+
 • Must open + run the AAAS file in Processing in order to start the game.
 
 GAME INSTRUCTIONS/TIPS
+
 • Instructions for moving through applications and days are included inside the game, as are the rules of how to decide whether to send the applicant to Harvard or MIT, or to ruin their life—sorry, send them to Greendale Community College.
 • Reminders:
     • Errors reset at the start of every day. Disadulations do not.

@@ -278,9 +278,7 @@ void mousePressed(){
     fill(#EDF1F5);
     rect(665, 320, 1100, 260, 7);
     
-    textSize(32);
-    fill(#404E5C);
-    text(gn, 665, 340, 1000, 250);
+    
     
     String newDisad = "";
     if (numDay % 3 == 0 && errorThreshold == 2 && ! thresholdChanged){
@@ -297,6 +295,15 @@ void mousePressed(){
       newDisad = "You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, we expect perfection. You will receive a disadulation as soon as you make a mistake.";
     }else if (numDay % 3 == 0 && errorThreshold == 2){
       newDisad = "You've been doing pretty well. I, the supervisor, have decided to be stricter with your disadulations. Now, if you make 2 mistakes, you will receive a disadulation!";
+    }
+    if (! newDisad.equals("")){
+      textSize(32);
+      fill(#404E5C);
+      text(gn, 665, 340, 1000, 250);
+    }else{
+      textSize(32);
+      fill(#404E5C);
+      text(gn, 665, 395, 1000, 250);
     }
     fill(#404E5C);
     text(newDisad, 665, 450, 1000, 200);

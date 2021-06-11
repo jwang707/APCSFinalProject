@@ -24,6 +24,19 @@ I finished and tested the Executor class! I wrote the day() and main methods and
 6.3.2021 (Zoom call with Jasmine)
 Got a lot done in Processing yay! I made the intro screen (learned how to wrap text!) and worked on formatting and generating the application from the button. 
 
+6.9.2021 (in class with Jasmine)
+Figured out how to make the the buttons not abusable (make decisions final and prevent user from generating a new application if they haven't made a decision).
+
+6.9.2021 (after school)
+Made the acceptance and rejection stickers (made Acceptance and Error classes).
+Made a day runnable (unblocking the buttons once the decision is made, updating the variables, etc.).
+Cleaned up the draw() method by making helpers for each screen.
+Made the good morning and good night/end of day screens.
+Made the game playable (run through days infinitely until the user loses).
+Made a game over screen.
+Basically transferred and updated/rewrote everything from Executor class in Java to Processing.
+Did some testing and debugging.
+
 Jasmine:
 5/24/21 - 5/25/21
 During class (5/24), I completed the Standards class with the necessary instance variables, constructor, and get methods. I then worked on the word bank arrays with Nour. On (5/25), I began to work on the Executor class (Java version), creating instance variables, constructor, and most of the methods, including the compare(), showRules(), and printApplication() methods. Towards the end I've run into a small problem with day() and am considering getting rid of it and combining it with the main method to make user input easier. (But that's a problem for tomorrow!) After this, I'll test to make sure our proof of concept/basic game works and then take on the greater beast of implementing it in Processing.

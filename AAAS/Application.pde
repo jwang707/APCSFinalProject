@@ -11,6 +11,7 @@ public class Application{
   int college;
   String error;
   int ID = (int) (Math.random() * 99999999);
+  boolean demInterest = true;
   Standards stand;
   String decision = "...";
   boolean appToggled = false;
@@ -128,7 +129,7 @@ public class Application{
   //TOTAL COUNT: 30
 
 
-  String[] errorList = {"gpa", "sat", "IM", "EC", "statement"};
+  String[] errorList = {"gpa", "sat", "IM", "EC", "statement", "demInt"};
 
 
   Application(Rulebook r){
@@ -175,7 +176,7 @@ public class Application{
 
     }else{
       //greendale
-      error = errorList[(int)(Math.random()*5)];
+      error = errorList[(int)(Math.random()*6)];
       //generic good application stuff that will change in the "errors"
       //gpa and sat are already set
 
@@ -213,7 +214,11 @@ public class Application{
 
         int random = (int)(Math.random()*3);
         ECs[random] = extraCurriculars[0][(int)(Math.random()*50)];
-
+        
+      }else if (error.equals("demInt")){
+        
+        demInterest = false;
+        
       }else{    //error is statement
 
         String str = "";
@@ -317,7 +322,14 @@ public class Application{
     text(getECsString(), 200, 380);
     text("Statement: ", 200, 480);
     text(statement, 525, 564.5, 400, 200);
-    text("Decision: " + decision, 200, 600);
+    text("Demonstrated Interest: ", 200, 550);
+    if (demInterest){
+      text("Yes!", 450, 550);
+    }else{
+      text("Ew no that's so much work.", 450, 550);
+    }
+    
+    text("Decision: " + decision, 200, 650);
     //text("For testing purposes only: Mood is " + stand.getMoodString(), 200, 650);
   }
   

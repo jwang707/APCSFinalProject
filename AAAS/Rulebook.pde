@@ -89,6 +89,7 @@ public class Rulebook{
     text(" - SAT must be greater than or equal to " + s.getReqSAT(), 915, 380);
     text(" - Must have at least three valid and \n   constructive extracurriculars", 915, 400);
     text(" - Statement of purpose must be free of spelling \n   errors", 915, 440);
+    text(" - Demonstrated interest must be present.", 915, 480);
     text("In the case of an error-free application, \n students with a liberal arts focus are admitted \n to Harvard University. Students with a STEM \n focus are admitted to MIT. Otherwise, the \n student should be admitted to Greendale. \n\nNOTE: Decisions made are irreversible. Once \n decision is made, press new application button.", 915, 515);
   }
 

@@ -1,9 +1,12 @@
+PImage pic;
+
 int unstarted = 0;
 int intro = 1;
 int started = 2;
 int morning = 3;
 int day = 4;
 int night = 5;
+int celebrate = 6;
 int state = unstarted;
 
 int backRed = 64;
@@ -68,6 +71,8 @@ void setup(){
   buttons.add(new Button("disco"));
   rules = new Rulebook();
   standard = rules.getStandards();
+  
+  pic = loadImage("celebration.jpg");
 }
 
 void draw(){
@@ -89,6 +94,8 @@ void draw(){
     morning();
   }else if (state == night){
     endOfDay();
+  }else if (state == celebrate){
+    celebration();
   }else{
     //state == day
      if (backRed != 79){
@@ -207,8 +214,15 @@ void mousePressed(){
     state = day;
     thresholdChanged = false;
   }else if (state == night){
+    if (numDay % 5 == 0){
+      state = celebrate;
+    }else{
+      state = morning;
+    }
+  }else if (state == celebrate){
     state = morning;
   }
+  
   for (Button b : buttons){
     if (b.type.equals("newApp")){
       if (accepted){
@@ -376,6 +390,18 @@ void mousePressed(){
     text("Errors Until Next Disad: " + (errorThreshold - errorsMade), 915, 220);
     text("Disadulations: " + disads, 1120, 220);
     text("Score (# Correct Apps): " + numCorrect, 915, 240);
+  }
+  
+  void celebration(){
+    imageMode(CENTER);
+    image(pic, 665, 375);
+    textSize(32);
+    fill(#EDF1F5);
+    text("Congrats! You got through " + (numDay-1) + " days. Your supervisor hates you less now!", 665, 70);
+    textSize(23);
+    fill(#EDF1F5);
+    text("Click anywhere to continue", 665, 700);
+    
   }
   
   

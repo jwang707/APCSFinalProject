@@ -7,18 +7,28 @@ Absolutely Accurate Admissions Simulator
 Proposal: https://docs.google.com/document/d/1oyPPoz8RnCR7FU4K3PSLNvjDRoJHhUrLgNEBKkHn8nk/edit?usp=sharing
 
 COMPILE/RUN INSTRUCTIONS
-> Must open + run the AAAS file in Processing in order to start the game.
+
+• Must open + run the AAAS file in Processing in order to start the game.
 
 GAME INSTRUCTIONS/TIPS
-> Instructions for moving through applications and days are included inside the game, as are the rules of how to decide whether to send the applicant to Harvard or MIT, or to ruin their life—sorry, send them to Greendale Community College.
-> Reminders:
-    > Errors reset at the start of every day. Disadulations do not.
-    > The number of errors left until you get a disadulation is listed in the Counter box.
-    > You are stuck in this job until you get three disadulations and get fired. If you are amazingly good at this game, it will never end. 
-> Tip: Make sure to check the rulebook for every application! Your supervisor is very moody, so the guidelines for admission will change frequently.
-> Additional fun features that the user can discover:
-   > Go to the "Guidelines for Admission" page of the rulebook. If the first statement says, "Your supervisor is currently in a [good/bad] mood," then we suggest you hover over the text for an entertaining surprise!
-   > Click on the black buttons labelled "?" for another cool surprise!
+
+• Instructions for moving through applications and days are included inside the game, as are the rules of how to decide whether to send the applicant to Harvard or MIT, or to ruin their life—sorry, send them to Greendale Community College.
+
+• Reminders:
+
+    • Errors reset at the start of every day. Disadulations do not.
+    
+    • The number of errors left until you get a disadulation is listed in the Counter box.
+    
+    • You are stuck in this job until you get three disadulations and get fired. If you are amazingly good at this game, it will never end. 
+    
+• Tip: Make sure to check the rulebook for every application! Your supervisor is very moody, so the guidelines for admission will change frequently.
+
+• Additional fun features that the user can discover:
+
+   • Go to the "Guidelines for Admission" page of the rulebook. If the first statement says, "Your supervisor is currently in a [good/bad] mood," then we suggest you hover over the text for an entertaining surprise!
+   
+   • Click on the black buttons labelled "?" for another cool surprise!
 
 
 DEVELOPMENT LOGS
@@ -73,3 +83,6 @@ Started adding the rulebook; made it flippable and started to detail some of the
 
 6/9/21
 Finished rulebook (fully workable with Standards), fixed around some general visual aspects, and worked on making the decisions final (once a decision is made it can't be changed)/application generator not abusable during class with Nour.
+
+6/10/21
+Implemented special mood buttons (dance dance dance vs. Be Mad) and mood flavor text. Updated UML diagram!

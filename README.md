@@ -13,13 +13,21 @@ COMPILE/RUN INSTRUCTIONS
 GAME INSTRUCTIONS/TIPS
 
 • Instructions for moving through applications and days are included inside the game, as are the rules of how to decide whether to send the applicant to Harvard or MIT, or to ruin their life—sorry, send them to Greendale Community College.
+
 • Reminders:
+
     • Errors reset at the start of every day. Disadulations do not.
+    
     • The number of errors left until you get a disadulation is listed in the Counter box.
+    
     • You are stuck in this job until you get three disadulations and get fired. If you are amazingly good at this game, it will never end. 
+    
 • Tip: Make sure to check the rulebook for every application! Your supervisor is very moody, so the guidelines for admission will change frequently.
+
 • Additional fun features that the user can discover:
+
    • Go to the "Guidelines for Admission" page of the rulebook. If the first statement says, "Your supervisor is currently in a [good/bad] mood," then we suggest you hover over the text for an entertaining surprise!
+   
    • Click on the black buttons labelled "?" for another cool surprise!
 
 

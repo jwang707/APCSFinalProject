@@ -16,11 +16,11 @@ GAME INSTRUCTIONS/TIPS
 
 • Reminders:
 
-    • Errors reset at the start of every day. Disadulations do not.
+   • Errors reset at the start of every day. Disadulations do not.
     
-    • The number of errors left until you get a disadulation is listed in the Counter box.
+   • The number of errors left until you get a disadulation is listed in the Counter box.
     
-    • You are stuck in this job until you get three disadulations and get fired. If you are amazingly good at this game, it will never end. 
+   • You are stuck in this job until you get three disadulations and get fired. If you are amazingly good at this game, it will never end. 
     
 • Tip: Make sure to check the rulebook for every application! Your supervisor is very moody, so the guidelines for admission will change frequently.
 

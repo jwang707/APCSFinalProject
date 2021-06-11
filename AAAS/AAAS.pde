@@ -26,6 +26,7 @@ int numApps = 7; //number of apps in one day
 int numDay = 1;
 int errorThreshold = 3; //number of errors for one disadulation. threshold of 3 = 2 errors allowed. 3rd one is a disad.
 int appsSoFar = 0;
+int numCorrect = 0;
 boolean nextApp = false;
 boolean nextDay = false;
 boolean thresholdChanged = false;
@@ -91,6 +92,8 @@ void draw(){
      }
      
    rules.display();
+   
+   counters();
 
    for (Button b : buttons){
      b.update();
@@ -172,26 +175,12 @@ void mousePressed(){
           accepted = false;
           appsSoFar++;
           decisionsMade++;
+          numCorrect++;
         } 
       }
     }
   }
   
- /* if (accepted && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
-    accepted = false;
-//    System.out.println(appsSoFar);
-//    System.out.println(numApps);
-    appsSoFar++;
-    decisionsMade++;
-    if (appsSoFar < numApps){
-      nextApp = true;
-    }else{
-      nextApp = false;
-      nextDay = true;
-    }
-  }*/
-
-      //&& (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)
   for (Button b : buttons){
     if (b.type.equals("newApp")){
       if (mistake){
@@ -233,7 +222,6 @@ void mousePressed(){
   }
   
   rules.click(standard);
-  
   
 }
 
@@ -277,9 +265,7 @@ void mousePressed(){
   void endOfDay(){
     fill(#EDF1F5);
     rect(665, 320, 1100, 260, 7);
-    
-    
-    
+
     String newDisad = "";
     if (numDay % 3 == 0 && errorThreshold == 2 && ! thresholdChanged){
        errorThreshold = 1;
@@ -311,6 +297,24 @@ void mousePressed(){
     fill(#EDF1F5);
     text("Click anywhere to continue", 665, 500);
     nextApp = true;
+  }
+  
+  void counters(){
+    noStroke();
+    rectMode(CORNER);
+    fill(#f5f2e0);
+    rect(900, 150, 370, 110, 7);
+    textAlign(LEFT);
+    textSize(25);
+    fill(#B85644);
+    text("DAY " + numDay, 915, 180);
+    textSize(18);
+    text("Total Apps Reviewed: " + decisionsMade, 915, 200);
+    text("Apps Left Today: " + (numApps - appsSoFar), 1120, 200);
+    text("Errors Until Next Disad: " + (errorThreshold - errorsMade), 915, 220);
+    text("Disadulations: " + disads, 1120, 220);
+    text("Score (# Correct Apps): " + numCorrect, 915, 240);
+    
   }
   
   

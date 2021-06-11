@@ -25,7 +25,7 @@ int disads = 0;
 int numApps = 7; //number of apps in one day
 int numDay = 1;
 int errorThreshold = 3; //number of errors for one disadulation. threshold of 3 = 2 errors allowed. 3rd one is a disad.
-int appsSoFar = 0;
+int appsSoFar = 1;
 int numCorrect = 0;
 boolean nextApp = false;
 boolean nextDay = false;
@@ -121,7 +121,7 @@ void draw(){
      errorsMade = 0;
      numDay++;
      numApps += 2;
-     appsSoFar = 0;
+     appsSoFar = 1;
      nextDay = false;
    }
    
@@ -310,7 +310,7 @@ void mousePressed(){
     text("DAY " + numDay, 915, 180);
     textSize(18);
     text("Total Apps Reviewed: " + decisionsMade, 915, 200);
-    text("Apps Left Today: " + (numApps - appsSoFar), 1120, 200);
+    text("Apps Left Today: " + (numApps - appsSoFar + 1), 1120, 200);
     text("Errors Until Next Disad: " + (errorThreshold - errorsMade), 915, 220);
     text("Disadulations: " + disads, 1120, 220);
     text("Score (# Correct Apps): " + numCorrect, 915, 240);

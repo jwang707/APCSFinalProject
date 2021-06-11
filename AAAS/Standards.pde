@@ -73,7 +73,7 @@ public class Standards{
         if (getMood() == -1){ // bad mood
           String flavor = moodText[0][moodTextNum];
           rectMode(CORNERS);
-          rect(mouseX-(flavor.length()*9)-20, mouseY-30, mouseX, mouseY);
+          rect(mouseX-(flavor.length()*9)-30, mouseY-30, mouseX, mouseY);
           fill(ruleText);
           textAlign(RIGHT, BOTTOM);
           text(moodText[0][moodTextNum], mouseX, mouseY);
@@ -81,7 +81,7 @@ public class Standards{
         if (getMood() == 1){ // good mood
           String flavor = moodText[1][moodTextNum];
           rectMode(CORNERS);
-          rect(mouseX-(flavor.length()*9)-20, mouseY-30, mouseX, mouseY, 4);
+          rect(mouseX-(flavor.length()*9)-30, mouseY-30, mouseX, mouseY, 4);
           fill(ruleText);
           textAlign(RIGHT, BOTTOM);
           text(moodText[1][moodTextNum], mouseX, mouseY);

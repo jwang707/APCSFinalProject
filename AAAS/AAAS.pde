@@ -234,10 +234,10 @@ void mousePressed(){
       }
     }
     
-    if (!raging && b.hovering() && standard.getMood() == -1){
+    if (!raging && b.hovering() && standard.getMood() == -1 && b.type.equals("rage")){
       raging = true;
     }
-    if (!disco && b.hovering() && standard.getMood() == 1){
+    if (!disco && b.hovering() && standard.getMood() == 1 && b.type.equals("disco")){
       disco = true;
     }
     

@@ -70,6 +70,7 @@ Made SAT and GPA generators generate higher scores in order to make the changing
 
 6.11.2021
 Added celebration every 5 days!
+Added Demonstrated Interest factor to application and rulebook.
 
 Jasmine:
 5/24/21 - 5/25/21

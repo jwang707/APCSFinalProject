@@ -137,6 +137,7 @@ public class Button{ // used https://processing.org/examples/button.html for hel
     if (type.equals("newApp") && ! appMade){
       rules = new Rulebook();
       app = new Application(rules);
+      standard = app.getStand();
       appMade = true;
       //app.toggleApp(true);
     }

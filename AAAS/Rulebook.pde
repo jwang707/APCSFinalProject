@@ -26,7 +26,7 @@ public class Rulebook{
       rect(1085, 485, 370, 430, 6);
       strokeWeight(2);
       stroke(#e1d8a3);
-      line(900, 485, 1300, 485);
+      line(900, 485, 1270, 485);
       fill(#e1d8a3);
       triangle(1230, 698, 1257, 670, 1230, 670);
       fill(ruleText);

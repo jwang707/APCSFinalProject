@@ -107,11 +107,11 @@ void draw(){
    
    rules.update();
     
-   if (nextApp){
+   /*if (nextApp){
      appMade = false;
      decMade = false;
      nextApp = false;
-   }
+   }*/
    
    if (nextDay){
      state = night;
@@ -152,8 +152,32 @@ void mousePressed(){
   }else if (state == night){
     state = morning;
   }
+  for (Button b : buttons){
+    if (b.type.equals("newApp")){
+      if (accepted){
+        if (b.hovering()){
+                   
+          if (appsSoFar < numApps){
+            nextApp = true;
+            appMade = false;
+            decMade = false;
+            nextApp = false;
+            b.click(newAppButton.getApp());    
+          }else{
+            nextApp = false;
+            nextDay = true;
+            appMade = false;
+            decMade = false;
+          }
+          accepted = false;
+          appsSoFar++;
+          decisionsMade++;
+        } 
+      }
+    }
+  }
   
-  if (accepted && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
+ /* if (accepted && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
     accepted = false;
 //    System.out.println(appsSoFar);
 //    System.out.println(numApps);
@@ -165,16 +189,31 @@ void mousePressed(){
       nextApp = false;
       nextDay = true;
     }
-  }
-  if (mistake && (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)){
-    mistake = false;
-    appsSoFar++;
-    decisionsMade++;
-    if (appsSoFar < numApps){
-      nextApp = true;
-    }else{
-      nextApp = false;
-      nextDay = true;
+  }*/
+
+      //&& (mouseX>437) && (mouseX<787) && (mouseY>85) && (mouseY<245)
+  for (Button b : buttons){
+    if (b.type.equals("newApp")){
+      if (mistake){
+        if (b.hovering()){
+          
+          if (appsSoFar < numApps){
+            nextApp = true;
+            appMade = false;
+            decMade = false;
+            nextApp = false;
+            b.click(newAppButton.getApp());    
+          }else{
+            nextApp = false;
+            nextDay = true;
+            appMade = false;
+            decMade = false;
+          }
+          mistake = false;
+          appsSoFar++;
+          decisionsMade++;
+        } 
+      }
     }
   }
   

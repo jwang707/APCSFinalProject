@@ -176,7 +176,6 @@ public class Application{
     }else{
       //greendale
       error = errorList[(int)(Math.random()*5)];
-
       //generic good application stuff that will change in the "errors"
       //gpa and sat are already set
 
@@ -199,12 +198,12 @@ public class Application{
 
       if (error.equals("gpa")){
 
-        gpa = Math.round((Math.random()*(minGPA - 40) + 40) *10);
+        gpa = Math.round((Math.random()*(minGPA - 85) + 85) *10);
         gpa = gpa / 10.0;
 
       }else if (error.equals("sat")){
 
-        sat = (int)(Math.random()*minSAT) /10 *10;
+        sat = (int)((Math.random()*(minSAT+1-1450) + 1450) /10) *10;
 
       }else if (error.equals("IM")){
 
